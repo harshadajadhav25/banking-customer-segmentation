@@ -51,6 +51,7 @@ flowchart TD
 - Altair and Plotly
 - pytest
 - Joblib
+- GitHub Actions
 
 ## Dataset
 
@@ -349,5 +350,5 @@ The recommendation system:
 - Build a Power BI executive dashboard
 - Add recommendation acceptance and conversion tracking
 - Add model-drift monitoring
-- Add automated GitHub Actions testing
+- Expand GitHub Actions with PostgreSQL and dbt integration tests
 - Deploy the Streamlit application
