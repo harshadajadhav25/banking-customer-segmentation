@@ -1,0 +1,42 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+dbt/profiles.yml
+dbt/.user.yml
+
+# Python environment and cache
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+logs/
+*.log
+
+# Generated data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Trained model artifacts
+*.joblib
+
+# dbt generated files
+dbt_packages/
+target/
+dbt/dbt_packages/
+dbt/target/
+dbt/logs/
+
+# Power BI local files
+*.pbix
+
+# Operating-system files
+.DS_Store
+Thumbs.db

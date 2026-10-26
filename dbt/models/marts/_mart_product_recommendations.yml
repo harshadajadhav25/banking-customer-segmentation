@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: mart_product_recommendations
+    description: >
+      Analytics-ready customer product recommendations enriched with
+      customer segment, account activity and financial context.
+
+    columns:
+      - name: recommendation_id
+        description: Reproducible unique identifier for each recommendation.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: Customer receiving the recommendation.
+        data_tests:
+          - not_null
+
+      - name: account_id
+        description: Account associated with the recommendation.
+        data_tests:
+          - not_null
+
+      - name: cluster_id
+        description: Numeric customer cluster.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [0, 1, 2, 3, 4]
+                quote: false
+
+      - name: segment_name
+        description: Business-friendly customer segment.
+        data_tests:
+          - not_null
+
+      - name: recommended_product
+        description: Product or service recommended to the customer.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Payment Card
+                  - Personal Loan Consultation
+                  - Savings Account
+                  - Overdraft Protection
+                  - Automatic Payment Setup
+                  - Account Re-Engagement Review
+
+      - name: recommendation_score
+        description: Rule-based recommendation score from 0 to 100.
+        data_tests:
+          - not_null
+
+      - name: recommendation_rank
+        description: Recommendation position for the customer.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [1, 2, 3]
+                quote: false
+
+      - name: recommendation_reason
+        description: Human-readable reason for the recommendation.
+        data_tests:
+          - not_null
+
+      - name: recommendation_version
+        description: Version of the recommendation rules.
+        data_tests:
+          - not_null
+
+      - name: snapshot_date
+        description: Customer data snapshot date used by the pipeline.
+        data_tests:
+          - not_null
+
+      - name: generated_at
+        description: Timestamp when the recommendation was generated.
+        data_tests:
+          - not_null

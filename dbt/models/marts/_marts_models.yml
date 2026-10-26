@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: mart_customer_360
+    description: >
+      Customer-level analytical table containing demographic, account,
+      transaction, product ownership, loan, card, payment order, and
+      regional features. Each row represents one primary account owner.
+
+    columns:
+      - name: customer_id
+        description: Unique identifier for the primary account-owning customer.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: account_id
+        description: Unique identifier for the customer's account.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: snapshot_date
+        description: Latest transaction date used as the analytical snapshot.
+        data_tests:
+          - not_null
+
+      - name: customer_age_at_snapshot
+        description: Customer age calculated as of the dataset snapshot date.
+        data_tests:
+          - not_null
+
+      - name: account_opened_date
+        description: Date on which the customer account was opened.
+        data_tests:
+          - not_null
+
+      - name: transaction_count
+        description: Total number of transactions associated with the account.
+        data_tests:
+          - not_null
+
+      - name: has_card
+        description: Indicates whether the customer owns at least one card.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+                quote: false
+
+      - name: has_loan
+        description: Indicates whether the customer has a loan.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+                quote: false
+
+      - name: banking_product_count
+        description: Total number of banking product categories held by the customer.
+        data_tests:
+          - not_null

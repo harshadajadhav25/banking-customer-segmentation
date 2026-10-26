@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: mart_customer_segments
+    description: >
+      Analytics-ready customer dataset combining customer behavior,
+      balances, product ownership and K-Means segment assignments.
+
+    columns:
+      - name: customer_id
+        description: Unique customer identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: account_id
+        description: Unique account associated with the customer.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: cluster_id
+        description: Numeric cluster assigned by the K-Means model.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [0, 1, 2, 3, 4]
+                quote: false
+
+      - name: segment_name
+        description: Business-friendly customer segment name.
+        data_tests:
+          - not_null
+
+      - name: segment_description
+        description: Explanation of the customer segment.
+        data_tests:
+          - not_null
+
+      - name: model_version
+        description: Version of the segmentation model.
+        data_tests:
+          - not_null
+
+      - name: scored_at
+        description: Timestamp when the customer was assigned a segment.
+        data_tests:
+          - not_null
+          

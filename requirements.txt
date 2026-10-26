@@ -1,0 +1,15 @@
+pandas==2.3.3
+numpy==2.3.3
+scikit-learn==1.7.2
+sqlalchemy==2.0.43
+psycopg2-binary==2.9.10
+python-dotenv==1.1.1
+pydantic==2.11.9
+pyyaml==6.0.3
+joblib==1.5.2
+plotly==6.3.1
+altair==5.5.0
+streamlit==1.50.0
+dbt-core==1.12.5
+dbt-postgres==1.11.0
+pytest==8.4.2

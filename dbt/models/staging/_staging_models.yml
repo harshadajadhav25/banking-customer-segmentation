@@ -1,0 +1,269 @@
+version: 2
+
+models:
+  - name: stg_accounts
+    description: Cleaned bank accounts with translated statement frequencies.
+    columns:
+      - name: account_id
+        description: Unique account identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: district_id
+        description: District associated with the account.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_districts')
+                field: district_id
+
+      - name: account_opened_date
+        description: Date on which the account was opened.
+        data_tests:
+          - not_null
+
+      - name: statement_frequency
+        description: English statement-delivery frequency.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Monthly
+                  - Weekly
+                  - After Transaction
+                  - Unknown
+
+  - name: stg_clients
+    description: Clients with decoded birth dates and gender.
+    columns:
+      - name: client_id
+        description: Unique client identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: district_id
+        description: Client's home district.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_districts')
+                field: district_id
+
+      - name: date_of_birth
+        description: Birth date decoded from the source value.
+        data_tests:
+          - not_null
+
+      - name: gender
+        description: Gender decoded from the source convention.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Female
+                  - Male
+
+  - name: stg_dispositions
+    description: Relationships between clients and accounts.
+    columns:
+      - name: disposition_id
+        description: Unique disposition identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: client_id
+        description: Related client identifier.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_clients')
+                field: client_id
+
+      - name: account_id
+        description: Related account identifier.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_accounts')
+                field: account_id
+
+      - name: disposition_type
+        description: Client's role on the account.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Account Owner
+                  - Authorized User
+                  - Unknown
+
+  - name: stg_cards
+    description: Bank cards linked to client-account dispositions.
+    columns:
+      - name: card_id
+        description: Unique card identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: disposition_id
+        description: Related disposition identifier.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_dispositions')
+                field: disposition_id
+
+      - name: card_type
+        description: Standardized card category.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Classic
+                  - Gold
+                  - Junior
+
+      - name: card_issued_date
+        description: Date on which the card was issued.
+        data_tests:
+          - not_null
+
+  - name: stg_districts
+    description: Cleaned regional demographic and economic indicators.
+    columns:
+      - name: district_id
+        description: Unique district identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: district_name
+        description: District name.
+        data_tests:
+          - not_null
+
+      - name: region_name
+        description: Region name.
+        data_tests:
+          - not_null
+
+      - name: population
+        description: District population.
+        data_tests:
+          - not_null
+
+  - name: stg_loans
+    description: Loans with financial values and translated statuses.
+    columns:
+      - name: loan_id
+        description: Unique loan identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: account_id
+        description: Account that received the loan.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_accounts')
+                field: account_id
+
+      - name: loan_amount
+        description: Original loan amount.
+        data_tests:
+          - not_null
+
+      - name: loan_status
+        description: Interpreted loan status.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Completed - Repaid
+                  - Completed - Not Repaid
+                  - Active - Performing
+                  - Active - In Debt
+                  - Unknown
+
+  - name: stg_payment_orders
+    description: Standing payment orders associated with accounts.
+    columns:
+      - name: payment_order_id
+        description: Unique payment-order identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: account_id
+        description: Account that created the order.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_accounts')
+                field: account_id
+
+      - name: payment_order_amount
+        description: Standing payment amount.
+        data_tests:
+          - not_null
+
+  - name: stg_transactions
+    description: Cleaned transactions with signed amounts and English categories.
+    columns:
+      - name: transaction_id
+        description: Unique transaction identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: account_id
+        description: Account associated with the transaction.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_accounts')
+                field: account_id
+
+      - name: transaction_date
+        description: Transaction date.
+        data_tests:
+          - not_null
+
+      - name: transaction_type
+        description: Credit or debit classification.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Credit
+                  - Debit
+                  - Unknown
+
+      - name: transaction_amount
+        description: Absolute transaction amount.
+        data_tests:
+          - not_null
+
+      - name: balance_after_transaction
+        description: Account balance following the transaction.
+        data_tests:
+          - not_null

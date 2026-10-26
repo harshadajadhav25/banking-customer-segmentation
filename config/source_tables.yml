@@ -1,0 +1,28 @@
+dataset: pkdd99_financial
+delimiter: ";"
+tables:
+  account:
+    file: account.asc
+    primary_key: account_id
+  card:
+    file: card.asc
+    primary_key: card_id
+  client:
+    file: client.asc
+    primary_key: client_id
+  disposition:
+    file: disp.asc
+    primary_key: disp_id
+  district:
+    file: district.asc
+    primary_key: A1
+  loan:
+    file: loan.asc
+    primary_key: loan_id
+  order:
+    file: order.asc
+    primary_key: order_id
+  transaction:
+    file: trans.asc
+    primary_key: trans_id
+

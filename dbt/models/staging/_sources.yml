@@ -1,0 +1,128 @@
+version: 2
+
+sources:
+  - name: banking_raw
+    description: >
+      Raw PKDD'99 banking tables loaded from the original semicolon-delimited
+      source files. All source values are preserved as text before staging
+      transformations.
+    schema: raw
+
+    tables:
+      - name: account
+        description: Bank accounts and account statement frequency.
+        columns:
+          - name: account_id
+            description: Unique account identifier.
+            data_tests:
+              - not_null
+              - unique
+
+          - name: district_id
+            description: District associated with the account.
+            data_tests:
+              - not_null
+
+      - name: card
+        description: Credit cards issued to account dispositions.
+        columns:
+          - name: card_id
+            description: Unique card identifier.
+            data_tests:
+              - not_null
+              - unique
+
+          - name: disp_id
+            description: Disposition associated with the card.
+            data_tests:
+              - not_null
+
+      - name: client
+        description: Anonymized banking clients.
+        columns:
+          - name: client_id
+            description: Unique client identifier.
+            data_tests:
+              - not_null
+              - unique
+
+          - name: birth_number
+            description: Encoded birth date and gender value.
+            data_tests:
+              - not_null
+
+          - name: district_id
+            description: Client's home district.
+            data_tests:
+              - not_null
+
+      - name: disposition
+        description: Relationship between clients and accounts.
+        columns:
+          - name: disp_id
+            description: Unique disposition identifier.
+            data_tests:
+              - not_null
+              - unique
+
+          - name: client_id
+            description: Related client identifier.
+            data_tests:
+              - not_null
+
+          - name: account_id
+            description: Related account identifier.
+            data_tests:
+              - not_null
+
+      - name: district
+        description: Regional demographic and economic indicators.
+        columns:
+          - name: A1
+            quote: true
+            description: Original district identifier.
+            data_tests:
+              - not_null
+              - unique
+
+      - name: loan
+        description: Loans issued to bank accounts.
+        columns:
+          - name: loan_id
+            description: Unique loan identifier.
+            data_tests:
+              - not_null
+              - unique
+
+          - name: account_id
+            description: Account receiving the loan.
+            data_tests:
+              - not_null
+
+      - name: payment_order
+        description: Standing payment orders created by accounts.
+        columns:
+          - name: order_id
+            description: Unique payment-order identifier.
+            data_tests:
+              - not_null
+              - unique
+
+          - name: account_id
+            description: Account that created the payment order.
+            data_tests:
+              - not_null
+
+      - name: bank_transaction
+        description: More than one million anonymized banking transactions.
+        columns:
+          - name: trans_id
+            description: Unique transaction identifier.
+            data_tests:
+              - not_null
+              - unique
+
+          - name: account_id
+            description: Account associated with the transaction.
+            data_tests:
+              - not_null

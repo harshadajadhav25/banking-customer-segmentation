@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: mart_customer_segmentation_features
+    description: >
+      Customer-level behavioral feature table prepared for machine-learning
+      segmentation and product recommendation analysis.
+
+    columns:
+      - name: customer_id
+        description: Unique customer identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: account_id
+        description: Unique account associated with the customer.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: snapshot_date
+        description: Analytical snapshot date based on the latest transaction.
+        data_tests:
+          - not_null
+
+      - name: transaction_count
+        description: Total number of customer transactions.
+        data_tests:
+          - not_null
+
+      - name: total_transaction_volume
+        description: Total monetary volume of customer transactions.
+        data_tests:
+          - not_null
+
+      - name: average_balance
+        description: Average account balance across the available transaction history.
+        data_tests:
+          - not_null
+
+      - name: average_monthly_transaction_count
+        description: Average number of transactions per active month.
+        data_tests:
+          - not_null
+
+      - name: average_monthly_transaction_volume
+        description: Average transaction volume per active month.
+        data_tests:
+          - not_null
+
+      - name: credit_to_debit_ratio
+        description: Ratio between the customer's total credits and total debits.
+        data_tests:
+          - not_null
