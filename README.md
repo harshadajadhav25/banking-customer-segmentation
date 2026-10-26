@@ -4,6 +4,14 @@
 
 An end-to-end banking analytics platform that transforms anonymized relational banking data into validated data marts, behavioral customer segments, ranked product recommendations, and an interactive Streamlit dashboard.
 
+## Live Dashboard
+
+Explore the deployed Banking Customer Intelligence dashboard:
+
+[Open the Streamlit Dashboard](https://banking-customer-segmentation-intelligence.streamlit.app)
+
+The public dashboard uses a validated, anonymized CSV snapshot generated from the analytics marts. The local dashboard connects directly to PostgreSQL.
+
 ## Project results
 
 - Processed **1,056,320 banking transactions**
