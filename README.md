@@ -1,5 +1,7 @@
 # Banking Customer Segmentation and Product Recommendation Platform
+
 [![Python Tests](https://github.com/harshadajadhav25/banking-customer-segmentation/actions/workflows/python-tests.yml/badge.svg)](https://github.com/harshadajadhav25/banking-customer-segmentation/actions/workflows/python-tests.yml)
+
 An end-to-end banking analytics platform that transforms anonymized relational banking data into validated data marts, behavioral customer segments, ranked product recommendations, and an interactive Streamlit dashboard.
 
 ## Project results
