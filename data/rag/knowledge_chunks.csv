@@ -1,0 +1,3919 @@
+chunk_id,source_file,document_title,section_path,document_chunk_index,section_chunk_index,content,searchable_text,character_count,word_count
+data_dictionary_001_8a9fb481a20e,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Purpose,1,1,"This document defines the customer, account, transaction, balance, product, segmentation, and model-output fields used by the Banking Customer Segmentation and Product Recommendation Platform.
+
+The principal customer-level dataset is `analytics.mart_customer_segments`. It contains one analytics record per customer and combines Customer 360 features with the latest segmentation output.
+
+The source data is the anonymized historical PKDD'99 Czech banking dataset. Monetary values retain the dataset's original currency context and must not be presented as current customer activity.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Purpose
+
+This document defines the customer, account, transaction, balance, product, segmentation, and model-output fields used by the Banking Customer Segmentation and Product Recommendation Platform.
+
+The principal customer-level dataset is `analytics.mart_customer_segments`. It contains one analytics record per customer and combines Customer 360 features with the latest segmentation output.
+
+The source data is the anonymized historical PKDD'99 Czech banking dataset. Monetary values retain the dataset's original currency context and must not be presented as current customer activity.",583,74
+data_dictionary_002_94795478f726,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Identifier Fields > `customer_id`,2,1,"An anonymized unique identifier for a customer. It is used to connect the Customer 360 record, segment assignment, and product recommendations.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Identifier Fields > `customer_id`
+
+An anonymized unique identifier for a customer. It is used to connect the Customer 360 record, segment assignment, and product recommendations.",143,21
+data_dictionary_003_922b52a7823c,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Identifier Fields > `account_id`,3,1,An anonymized unique identifier for the account associated with the customer. The analytics mart is based on the primary account-owner relationship.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Identifier Fields > `account_id`
+
+An anonymized unique identifier for the account associated with the customer. The analytics mart is based on the primary account-owner relationship.",148,21
+data_dictionary_004_840f0c4c65c3,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Identifier Fields > `disposition_id`,4,1,Identifier for the relationship between a customer and an account. A disposition records whether a customer is an account owner or another authorized user.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Identifier Fields > `disposition_id`
+
+Identifier for the relationship between a customer and an account. A disposition records whether a customer is an account owner or another authorized user.",155,24
+data_dictionary_005_fa818d00fe09,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Customer Profile Fields > `date_of_birth`,5,1,The customer's historical date of birth derived from the source data.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Customer Profile Fields > `date_of_birth`
+
+The customer's historical date of birth derived from the source data.",69,11
+data_dictionary_006_be64b510a992,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Customer Profile Fields > `customer_age_at_snapshot`,6,1,The customer's calculated age as of the analytics snapshot date. It represents age within the historical dataset and not the customer's current real-world age.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Customer Profile Fields > `customer_age_at_snapshot`
+
+The customer's calculated age as of the analytics snapshot date. It represents age within the historical dataset and not the customer's current real-world age.",159,24
+data_dictionary_007_f2200f481891,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Customer Profile Fields > `gender`,7,1,"Gender value provided or derived from the historical source dataset. It is retained for descriptive analysis and must not be used to make product eligibility, credit, pricing, or adverse-action decisions.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Customer Profile Fields > `gender`
+
+Gender value provided or derived from the historical source dataset. It is retained for descriptive analysis and must not be used to make product eligibility, credit, pricing, or adverse-action decisions.",204,30
+data_dictionary_008_c2d646c55b72,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Customer Profile Fields > `customer_district_id`,8,1,Identifier for the district associated with the customer.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Customer Profile Fields > `customer_district_id`
+
+Identifier for the district associated with the customer.",57,8
+data_dictionary_009_66b00fb2d203,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Customer Profile Fields > `district_name`,9,1,Business-readable name of the customer's district.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Customer Profile Fields > `district_name`
+
+Business-readable name of the customer's district.",50,6
+data_dictionary_010_e5ac10f590da,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Customer Profile Fields > `region_name`,10,1,Larger geographic region containing the customer's district.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Customer Profile Fields > `region_name`
+
+Larger geographic region containing the customer's district.",60,7
+data_dictionary_011_8018c44a42e6,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > District Context Fields,11,1,District fields describe the historical geographic area and should not be treated as individual customer attributes.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > District Context Fields
+
+District fields describe the historical geographic area and should not be treated as individual customer attributes.",116,16
+data_dictionary_012_da35a256b17b,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > District Context Fields > `district_population`,12,1,Historical population of the customer's district.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > District Context Fields > `district_population`
+
+Historical population of the customer's district.",49,6
+data_dictionary_013_c0c2e6426ea0,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > District Context Fields > `district_average_salary`,13,1,Historical average salary reported for the district.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > District Context Fields > `district_average_salary`
+
+Historical average salary reported for the district.",52,7
+data_dictionary_014_f1a4703a4291,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > District Context Fields > `unemployment_rate_1996`,14,1,District-level unemployment rate reported for 1996.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > District Context Fields > `unemployment_rate_1996`
+
+District-level unemployment rate reported for 1996.",51,6
+data_dictionary_015_6277cfa46057,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > District Context Fields > `entrepreneurs_per_1000`,15,1,"Historical number of entrepreneurs per 1,000 residents in the district.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > District Context Fields > `entrepreneurs_per_1000`
+
+Historical number of entrepreneurs per 1,000 residents in the district.",71,10
+data_dictionary_016_ac632f30336b,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > District Context Fields > `crime_count_1996`,16,1,Historical district-level crime count reported for 1996. It must not be interpreted as evidence about an individual customer.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > District Context Fields > `crime_count_1996`
+
+Historical district-level crime count reported for 1996. It must not be interpreted as evidence about an individual customer.",125,18
+data_dictionary_017_6b963bed89d7,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Account Fields > `account_opened_date`,17,1,Date when the account was opened.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Account Fields > `account_opened_date`
+
+Date when the account was opened.",33,6
+data_dictionary_018_1a481b325380,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Account Fields > `statement_frequency`,18,1,Frequency with which account statements were issued in the source system.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Account Fields > `statement_frequency`
+
+Frequency with which account statements were issued in the source system.",73,11
+data_dictionary_019_066ae0602ec4,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Account Fields > `account_tenure_months`,19,1,Number of months between the account-opened date and the analytics snapshot date.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Account Fields > `account_tenure_months`
+
+Number of months between the account-opened date and the analytics snapshot date.",81,12
+data_dictionary_020_4c52c6c3988a,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `first_transaction_date`,20,1,Date of the earliest available transaction associated with the account.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `first_transaction_date`
+
+Date of the earliest available transaction associated with the account.",71,10
+data_dictionary_021_be35f6f933bc,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `last_transaction_date`,21,1,Date of the most recent available transaction associated with the account.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `last_transaction_date`
+
+Date of the most recent available transaction associated with the account.",74,11
+data_dictionary_022_031f58cbf794,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `days_since_last_transaction`,22,1,Number of days between the most recent transaction and the snapshot date. A larger value indicates less-recent account activity.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `days_since_last_transaction`
+
+Number of days between the most recent transaction and the snapshot date. A larger value indicates less-recent account activity.",128,19
+data_dictionary_023_d64ec91a8379,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `transaction_count`,23,1,Total number of available transactions associated with the account.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `transaction_count`
+
+Total number of available transactions associated with the account.",67,9
+data_dictionary_024_8461630ef518,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `active_month_count`,24,1,Number of distinct calendar months in which the account had recorded transaction activity.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `active_month_count`
+
+Number of distinct calendar months in which the account had recorded transaction activity.",90,13
+data_dictionary_025_5b20a247d8cb,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `credit_transaction_count`,25,1,Number of transactions classified as credits or incoming funds.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `credit_transaction_count`
+
+Number of transactions classified as credits or incoming funds.",63,9
+data_dictionary_026_47cae8a27b73,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `debit_transaction_count`,26,1,Number of transactions classified as debits or outgoing funds.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Activity Fields > `debit_transaction_count`
+
+Number of transactions classified as debits or outgoing funds.",62,9
+data_dictionary_027_6b057929044f,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `total_credit_amount`,27,1,Total amount credited to the account across the available transaction history.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `total_credit_amount`
+
+Total amount credited to the account across the available transaction history.",78,11
+data_dictionary_028_cff0d8f7be89,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `total_debit_amount`,28,1,Total amount debited from the account across the available transaction history.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `total_debit_amount`
+
+Total amount debited from the account across the available transaction history.",79,11
+data_dictionary_029_b5bcda94ee7d,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `total_transaction_volume`,29,1,"Total absolute monetary activity across credit and debit transactions. It measures movement of funds and should not be interpreted as profit, income, or account value.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `total_transaction_volume`
+
+Total absolute monetary activity across credit and debit transactions. It measures movement of funds and should not be interpreted as profit, income, or account value.",167,25
+data_dictionary_030_22cd40da307f,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `average_transaction_amount`,30,1,Average monetary amount per transaction.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `average_transaction_amount`
+
+Average monetary amount per transaction.",40,5
+data_dictionary_031_959fb61d56f5,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `average_credit_amount`,31,1,Average amount of transactions classified as credits.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `average_credit_amount`
+
+Average amount of transactions classified as credits.",53,7
+data_dictionary_032_99afb48ac826,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `average_debit_amount`,32,1,Average amount of transactions classified as debits.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `average_debit_amount`
+
+Average amount of transactions classified as debits.",52,7
+data_dictionary_033_d1fd0dd561fb,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `net_cash_flow`,33,1,"Difference between total credited funds and total debited funds:
+
+```text
+net cash flow = total credit amount - total debit amount
+```
+
+A positive value indicates that recorded credits exceeded recorded debits during the available period. It does not necessarily represent income, profit, or financial health.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Amount Fields > `net_cash_flow`
+
+Difference between total credited funds and total debited funds:
+
+```text
+net cash flow = total credit amount - total debit amount
+```
+
+A positive value indicates that recorded credits exceeded recorded debits during the available period. It does not necessarily represent income, profit, or financial health.",309,46
+data_dictionary_034_1a0b5bbfe0da,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Balance Fields > `average_balance`,34,1,Average recorded account balance across the available transaction history.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Balance Fields > `average_balance`
+
+Average recorded account balance across the available transaction history.",74,9
+data_dictionary_035_876d3b93b1cb,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Balance Fields > `minimum_balance`,35,1,Lowest recorded account balance in the available transaction history.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Balance Fields > `minimum_balance`
+
+Lowest recorded account balance in the available transaction history.",69,9
+data_dictionary_036_0047a2790e7b,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Balance Fields > `maximum_balance`,36,1,Highest recorded account balance in the available transaction history.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Balance Fields > `maximum_balance`
+
+Highest recorded account balance in the available transaction history.",70,9
+data_dictionary_037_3c25f50b8c03,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Balance Fields > `latest_balance`,37,1,Balance associated with the most recent available transaction.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Balance Fields > `latest_balance`
+
+Balance associated with the most recent available transaction.",62,8
+data_dictionary_038_dcf6297d0157,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Balance Fields > `negative_balance_transaction_count`,38,1,Number of transaction records for which the recorded account balance was below zero.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Balance Fields > `negative_balance_transaction_count`
+
+Number of transaction records for which the recorded account balance was below zero.",84,13
+data_dictionary_039_5d1c602cbd98,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Balance Fields > `negative_balance_percentage`,39,1,"Percentage of available transaction records associated with a negative account balance.
+
+This field describes historical balance behavior. It must not automatically be interpreted as financial distress, fraud, credit risk, or inability to repay debt.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Balance Fields > `negative_balance_percentage`
+
+Percentage of available transaction records associated with a negative account balance.
+
+This field describes historical balance behavior. It must not automatically be interpreted as financial distress, fraud, credit risk, or inability to repay debt.",250,34
+data_dictionary_040_d2c7eabaaa0d,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Channel Fields > `card_withdrawal_count`,40,1,Number of transactions identified as card-based cash withdrawals.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Channel Fields > `card_withdrawal_count`
+
+Number of transactions identified as card-based cash withdrawals.",65,8
+data_dictionary_041_b5ea35d7be81,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Channel Fields > `cash_deposit_count`,41,1,Number of transactions identified as cash deposits.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Channel Fields > `cash_deposit_count`
+
+Number of transactions identified as cash deposits.",51,7
+data_dictionary_042_35e4a474185a,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Channel Fields > `incoming_transfer_count`,42,1,Number of transfer transactions representing incoming funds.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Channel Fields > `incoming_transfer_count`
+
+Number of transfer transactions representing incoming funds.",60,7
+data_dictionary_043_dd32c07d7777,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Transaction Channel Fields > `outgoing_transfer_count`,43,1,"Number of transfer transactions representing outgoing funds.
+
+These counts describe transaction-channel usage and help distinguish cash-focused, card-focused, and transfer-focused behavior.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Transaction Channel Fields > `outgoing_transfer_count`
+
+Number of transfer transactions representing outgoing funds.
+
+These counts describe transaction-channel usage and help distinguish cash-focused, card-focused, and transfer-focused behavior.",189,20
+data_dictionary_044_43146f022d87,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Payment Card Fields > `card_count`,44,1,Number of payment cards associated with the account or primary customer relationship.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Payment Card Fields > `card_count`
+
+Number of payment cards associated with the account or primary customer relationship.",85,12
+data_dictionary_045_9121e57924f8,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Payment Card Fields > `has_card`,45,1,Boolean indicator showing whether the customer currently has at least one recorded payment card.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Payment Card Fields > `has_card`
+
+Boolean indicator showing whether the customer currently has at least one recorded payment card.",96,14
+data_dictionary_046_d9d0bd667b4a,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Payment Card Fields > `highest_card_type`,46,1,Highest available card category associated with the customer based on the source card classifications.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Payment Card Fields > `highest_card_type`
+
+Highest available card category associated with the customer based on the source card classifications.",102,14
+data_dictionary_047_abca6d921a76,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Payment Card Fields > `first_card_issued_date`,47,1,Date when the earliest recorded card was issued.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Payment Card Fields > `first_card_issued_date`
+
+Date when the earliest recorded card was issued.",48,8
+data_dictionary_048_18fa52f12978,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Payment Card Fields > `most_recent_card_issued_date`,48,1,Date when the most recently recorded card was issued.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Payment Card Fields > `most_recent_card_issued_date`
+
+Date when the most recently recorded card was issued.",53,9
+data_dictionary_049_e77a9d834ffa,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Loan Fields > `loan_id`,49,1,"Identifier for the loan associated with the account, when one exists.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Loan Fields > `loan_id`
+
+Identifier for the loan associated with the account, when one exists.",69,11
+data_dictionary_050_9494f807a0c7,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Loan Fields > `loan_start_date`,50,1,Date when the recorded loan began.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Loan Fields > `loan_start_date`
+
+Date when the recorded loan began.",34,6
+data_dictionary_051_7d825b526cfc,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Loan Fields > `loan_amount`,51,1,Original monetary amount of the recorded loan.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Loan Fields > `loan_amount`
+
+Original monetary amount of the recorded loan.",46,7
+data_dictionary_052_02d81313d7db,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Loan Fields > `loan_duration_months`,52,1,Contracted loan duration expressed in months.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Loan Fields > `loan_duration_months`
+
+Contracted loan duration expressed in months.",45,6
+data_dictionary_053_224ece56fb8f,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Loan Fields > `monthly_payment`,53,1,Recorded monthly loan-payment amount.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Loan Fields > `monthly_payment`
+
+Recorded monthly loan-payment amount.",37,4
+data_dictionary_054_0ea2c30a97e3,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Loan Fields > `loan_status`,54,1,Historical loan-status category from the source dataset.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Loan Fields > `loan_status`
+
+Historical loan-status category from the source dataset.",56,7
+data_dictionary_055_ca30235c2ea4,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Loan Fields > `has_loan`,55,1,Boolean indicator showing whether the customer currently has a recorded loan.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Loan Fields > `has_loan`
+
+Boolean indicator showing whether the customer currently has a recorded loan.",77,11
+data_dictionary_056_41493aaecb74,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Loan Fields > `has_loan_repayment_problem`,56,1,"Boolean indicator derived from historical loan status showing whether a repayment issue was recorded.
+
+This field is retained for descriptive analysis. The segmentation and recommendation demonstration must not use it to make automated eligibility, credit, pricing, or adverse-action decisions.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Loan Fields > `has_loan_repayment_problem`
+
+Boolean indicator derived from historical loan status showing whether a repayment issue was recorded.
+
+This field is retained for descriptive analysis. The segmentation and recommendation demonstration must not use it to make automated eligibility, credit, pricing, or adverse-action decisions.",294,39
+data_dictionary_057_5ca85f7e71a1,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Scheduled Payment Fields > `payment_order_count`,57,1,Number of scheduled payment orders associated with the account.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Scheduled Payment Fields > `payment_order_count`
+
+Number of scheduled payment orders associated with the account.",63,9
+data_dictionary_058_c126317b5023,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Scheduled Payment Fields > `total_scheduled_payment_amount`,58,1,Total monetary amount represented by the recorded scheduled payment orders.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Scheduled Payment Fields > `total_scheduled_payment_amount`
+
+Total monetary amount represented by the recorded scheduled payment orders.",75,10
+data_dictionary_059_b19f5edac76c,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Scheduled Payment Fields > `loan_payment_order_count`,59,1,Number of scheduled payment orders associated with loan payments.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Scheduled Payment Fields > `loan_payment_order_count`
+
+Number of scheduled payment orders associated with loan payments.",65,9
+data_dictionary_060_96ab16147668,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Scheduled Payment Fields > `household_payment_order_count`,60,1,Number of scheduled payment orders associated with household expenses.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Scheduled Payment Fields > `household_payment_order_count`
+
+Number of scheduled payment orders associated with household expenses.",70,9
+data_dictionary_061_a21c038d8454,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Scheduled Payment Fields > `insurance_payment_order_count`,61,1,Number of scheduled payment orders associated with insurance payments.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Scheduled Payment Fields > `insurance_payment_order_count`
+
+Number of scheduled payment orders associated with insurance payments.",70,9
+data_dictionary_062_d03c487bc09c,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Product Ownership Field > `banking_product_count`,62,1,"Count of the banking-product categories associated with the customer. It provides a simplified measure of product breadth and engagement.
+
+It should not be interpreted as account profitability or customer value by itself.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Product Ownership Field > `banking_product_count`
+
+Count of the banking-product categories associated with the customer. It provides a simplified measure of product breadth and engagement.
+
+It should not be interpreted as account profitability or customer value by itself.",221,32
+data_dictionary_063_c7a5b6bc8ed2,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Snapshot Field > `snapshot_date`,63,1,"Date representing the point in time at which customer features were calculated. All recency, age, and tenure measures must be interpreted relative to this date.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Snapshot Field > `snapshot_date`
+
+Date representing the point in time at which customer features were calculated. All recency, age, and tenure measures must be interpreted relative to this date.",160,25
+data_dictionary_064_d2248069330d,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Segmentation Fields > `cluster_id`,64,1,"Numeric cluster assigned by the K-Means model. The model currently produces five cluster identifiers:
+
+```text
+0, 1, 2, 3, 4
+```
+
+The numeric identifier has no inherent ranking or business meaning.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Segmentation Fields > `cluster_id`
+
+Numeric cluster assigned by the K-Means model. The model currently produces five cluster identifiers:
+
+```text
+0, 1, 2, 3, 4
+```
+
+The numeric identifier has no inherent ranking or business meaning.",197,31
+data_dictionary_065_2f1521c80a1f,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Segmentation Fields > `segment_name`,65,1,"Business-readable name mapped to the numeric cluster. Current segment names are:
+
+- High-Value Multi-Product.
+- Everyday Cash-Focused.
+- Mature Transfer-Focused.
+- High-Flow Financially Volatile.
+- Low-Engagement Dormant.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Segmentation Fields > `segment_name`
+
+Business-readable name mapped to the numeric cluster. Current segment names are:
+
+- High-Value Multi-Product.
+- Everyday Cash-Focused.
+- Mature Transfer-Focused.
+- High-Flow Financially Volatile.
+- Low-Engagement Dormant.",221,27
+data_dictionary_066_80daceaab482,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Segmentation Fields > `segment_description`,66,1,"Business-readable explanation of the dominant behavioral patterns associated with the segment.
+
+The description summarizes group-level patterns and is not an exact description of every customer in the cluster.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Segmentation Fields > `segment_description`
+
+Business-readable explanation of the dominant behavioral patterns associated with the segment.
+
+The description summarizes group-level patterns and is not an exact description of every customer in the cluster.",209,28
+data_dictionary_067_5c2657e41cc3,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Segmentation Fields > `model_version`,67,1,Version identifier for the segmentation model that produced the cluster assignment.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Segmentation Fields > `model_version`
+
+Version identifier for the segmentation model that produced the cluster assignment.",83,11
+data_dictionary_068_08fb32a03e90,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Segmentation Fields > `scored_at`,68,1,Timestamp indicating when the segmentation pipeline generated the customer assignment.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Segmentation Fields > `scored_at`
+
+Timestamp indicating when the segmentation pipeline generated the customer assignment.",86,10
+data_dictionary_069_8b5c52ba7884,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Derived Recommendation Features,69,1,The recommendation pipeline derives two monthly activity measures from the customer mart.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Derived Recommendation Features
+
+The recommendation pipeline derives two monthly activity measures from the customer mart.",89,12
+data_dictionary_070_1513f952dbeb,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Derived Recommendation Features > `average_monthly_transaction_count`,70,1,"Calculated as:
+
+```text
+transaction_count / active_month_count
+```
+
+It represents average transaction frequency across months with recorded activity.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Derived Recommendation Features > `average_monthly_transaction_count`
+
+Calculated as:
+
+```text
+transaction_count / active_month_count
+```
+
+It represents average transaction frequency across months with recorded activity.",149,17
+data_dictionary_071_b459d2b0e32d,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Derived Recommendation Features > `average_monthly_transaction_volume`,71,1,"Calculated as:
+
+```text
+total_transaction_volume / active_month_count
+```
+
+It represents average transaction volume across months with recorded activity.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Derived Recommendation Features > `average_monthly_transaction_volume`
+
+Calculated as:
+
+```text
+total_transaction_volume / active_month_count
+```
+
+It represents average transaction volume across months with recorded activity.",153,17
+data_dictionary_072_280c685eec16,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields,72,1,The recommendation dataset is stored in `ml.product_recommendations` and exposed through `analytics.mart_product_recommendations`.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields
+
+The recommendation dataset is stored in `ml.product_recommendations` and exposed through `analytics.mart_product_recommendations`.",130,11
+data_dictionary_073_a5ba03fbad04,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommendation_id`,73,1,Unique identifier for a generated recommendation record.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommendation_id`
+
+Unique identifier for a generated recommendation record.",56,7
+data_dictionary_074_bc1079b7101d,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommended_product`,74,1,"Name of the product or service suggested by the rule engine. Current values include:
+
+- Savings Account.
+- Payment Card.
+- Personal Loan Consultation.
+- Overdraft Protection.
+- Automatic Payment Setup.
+- Account Re-Engagement Review.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommended_product`
+
+Name of the product or service suggested by the rule engine. Current values include:
+
+- Savings Account.
+- Payment Card.
+- Personal Loan Consultation.
+- Overdraft Protection.
+- Automatic Payment Setup.
+- Account Re-Engagement Review.",233,35
+data_dictionary_075_d287ad6c4acd,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommendation_score`,75,1,"Rule-based score used to prioritize eligible recommendations for a customer.
+
+The score is not a probability, credit score, approval score, or prediction of purchase behavior.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommendation_score`
+
+Rule-based score used to prioritize eligible recommendations for a customer.
+
+The score is not a probability, credit score, approval score, or prediction of purchase behavior.",175,25
+data_dictionary_076_f9299d1d4c42,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommendation_rank`,76,1,"Priority of the retained recommendation for a customer. Valid values are 1, 2, and 3, where rank 1 is the highest-scoring retained recommendation.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommendation_rank`
+
+Priority of the retained recommendation for a customer. Valid values are 1, 2, and 3, where rank 1 is the highest-scoring retained recommendation.",146,23
+data_dictionary_077_15a339e4c623,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommendation_reason`,77,1,Human-readable explanation of the historical conditions that triggered the recommendation.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommendation_reason`
+
+Human-readable explanation of the historical conditions that triggered the recommendation.",90,10
+data_dictionary_078_ad4d5aaf4599,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommendation_version`,78,1,Version of the business-rule implementation used to generate the recommendation. The current version is `rules_v1`.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `recommendation_version`
+
+Version of the business-rule implementation used to generate the recommendation. The current version is `rules_v1`.",115,15
+data_dictionary_079_358fa29d840a,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `generated_at`,79,1,UTC timestamp indicating when the recommendation pipeline generated the output.,"Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Product Recommendation Output Fields > `generated_at`
+
+UTC timestamp indicating when the recommendation pipeline generated the output.",79,10
+data_dictionary_080_7c004fc6f3c3,data_dictionary.md,Banking Customer Analytics Data Dictionary,Banking Customer Analytics Data Dictionary > Data Interpretation Rules,80,1,"The AI assistant must follow these rules when using the data dictionary:
+
+1. Treat all customer identifiers as anonymized identifiers.
+2. Treat monetary values as historical values in the dataset's original currency context.
+3. Do not present the dataset as current banking activity.
+4. Do not infer a customer's motivation from transaction behavior.
+5. Do not treat a segment average as an exact customer value.
+6. Do not describe recommendation scores as probabilities.
+7. Do not use demographic or district fields to make eligibility, lending, pricing, or adverse-action decisions.
+8. Do not interpret transaction volume as income or profitability.
+9. Do not interpret positive cash flow as proof of financial health.
+10. Do not interpret negative-balance activity as proof of financial distress or credit risk.
+11. Clearly distinguish individual customer values from segment-level summaries.
+12. State when requested information is unavailable from the documented fields.","Document: Banking Customer Analytics Data Dictionary
+Section: Banking Customer Analytics Data Dictionary > Data Interpretation Rules
+
+The AI assistant must follow these rules when using the data dictionary:
+
+1. Treat all customer identifiers as anonymized identifiers.
+2. Treat monetary values as historical values in the dataset's original currency context.
+3. Do not present the dataset as current banking activity.
+4. Do not infer a customer's motivation from transaction behavior.
+5. Do not treat a segment average as an exact customer value.
+6. Do not describe recommendation scores as probabilities.
+7. Do not use demographic or district fields to make eligibility, lending, pricing, or adverse-action decisions.
+8. Do not interpret transaction volume as income or profitability.
+9. Do not interpret positive cash flow as proof of financial health.
+10. Do not interpret negative-balance activity as proof of financial distress or credit risk.
+11. Clearly distinguish individual customer values from segment-level summaries.
+12. State when requested information is unavailable from the documented fields.",975,145
+model_card_001_3b93347481d5,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Model Overview,1,1,"The Banking Customer Segmentation and Product Recommendation Platform uses K-Means clustering to group customers with similar historical banking behavior. The model creates five customer segments from behavioral, transactional, balance, cash-flow, and transaction-channel features.
+
+The model is an unsupervised learning model. It does not predict a target variable and does not assign customers to known classes.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Model Overview
+
+The Banking Customer Segmentation and Product Recommendation Platform uses K-Means clustering to group customers with similar historical banking behavior. The model creates five customer segments from behavioral, transactional, balance, cash-flow, and transaction-channel features.
+
+The model is an unsupervised learning model. It does not predict a target variable and does not assign customers to known classes.",413,55
+model_card_002_548912fd64bc,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Model Identification,2,1,"| Property | Value |
+|---|---|
+| Model type | K-Means clustering |
+| Model version | `kmeans_v1` |
+| Number of clusters | 5 |
+| Number of customers | 4,500 |
+| Number of clustering features | 14 |
+| Random state | 42 |
+| K-Means initializations | 20 |
+| Preprocessing | Outlier capping and Yeo-Johnson transformation with standardization |
+| Training implementation | scikit-learn |
+| Primary feature dataset | `analytics.mart_customer_segmentation_features` |","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Model Identification
+
+| Property | Value |
+|---|---|
+| Model type | K-Means clustering |
+| Model version | `kmeans_v1` |
+| Number of clusters | 5 |
+| Number of customers | 4,500 |
+| Number of clustering features | 14 |
+| Random state | 42 |
+| K-Means initializations | 20 |
+| Preprocessing | Outlier capping and Yeo-Johnson transformation with standardization |
+| Training implementation | scikit-learn |
+| Primary feature dataset | `analytics.mart_customer_segmentation_features` |",460,77
+model_card_003_763e6fefa9af,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Intended Purpose,3,1,"The model is intended to identify broad customer-behavior patterns, support portfolio-level analysis, create interpretable segments, support explainable product-recommendation demonstrations, and power the project's dashboard and RAG assistant.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Intended Purpose
+
+The model is intended to identify broad customer-behavior patterns, support portfolio-level analysis, create interpretable segments, support explainable product-recommendation demonstrations, and power the project's dashboard and RAG assistant.",244,27
+model_card_004_4e531acd151d,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Prohibited Uses,4,1,"The model must not be used for loan approval or rejection, credit scoring, credit-limit decisions, product eligibility, pricing, adverse actions, fraud accusations, default prediction, or predictions presented as facts about an individual customer.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Prohibited Uses
+
+The model must not be used for loan approval or rejection, credit scoring, credit-limit decisions, product eligibility, pricing, adverse actions, fraud accusations, default prediction, or predictions presented as facts about an individual customer.",248,33
+model_card_005_3a0c0210daea,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Source Data,5,1,"The project uses the anonymized historical PKDD'99 Czech banking dataset. It includes accounts, customers, account dispositions, transactions, loans, payment cards, scheduled payment orders, and district demographics.
+
+The segmentation feature dataset contains 4,500 primary account owners derived from 1,056,320 transaction records. The data is historical and must not be presented as current banking activity. Monetary values retain the dataset's original currency context.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Source Data
+
+The project uses the anonymized historical PKDD'99 Czech banking dataset. It includes accounts, customers, account dispositions, transactions, loans, payment cards, scheduled payment orders, and district demographics.
+
+The segmentation feature dataset contains 4,500 primary account owners derived from 1,056,320 transaction records. The data is historical and must not be presented as current banking activity. Monetary values retain the dataset's original currency context.",475,61
+model_card_006_1e5d1c9fb02b,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Feature Dataset,6,1,"The model reads one customer-level record per customer from:
+
+```text
+analytics.mart_customer_segmentation_features
+```","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Feature Dataset
+
+The model reads one customer-level record per customer from:
+
+```text
+analytics.mart_customer_segmentation_features
+```",119,12
+model_card_007_a290ddcf58ef,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Clustering Features,7,1,"The model uses these 14 features:
+
+1. `customer_age_at_snapshot` - Customer age as of the historical snapshot.
+2. `account_tenure_months` - Months between account opening and the snapshot date.
+3. `days_since_last_transaction` - Days between the latest transaction and snapshot date.
+4. `average_monthly_transaction_count` - Transaction count divided by active-month count.
+5. `average_monthly_transaction_volume` - Total transaction volume divided by active-month count.
+6. `average_transaction_amount` - Average monetary amount per transaction.
+7. `net_cash_flow` - Total credited amount minus total debited amount.
+8. `average_balance` - Average recorded account balance.
+9. `latest_balance` - Balance associated with the latest available transaction.
+10. `negative_balance_percentage` - Percentage of records associated with a negative balance.
+11. `card_withdrawal_count` - Number of card-based cash withdrawals.
+12. `cash_deposit_count` - Number of cash-deposit transactions.
+13. `incoming_transfer_count` - Number of incoming transfers.
+14. `outgoing_transfer_count` - Number of outgoing transfers.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Clustering Features
+
+The model uses these 14 features:
+
+1. `customer_age_at_snapshot` - Customer age as of the historical snapshot.
+2. `account_tenure_months` - Months between account opening and the snapshot date.
+3. `days_since_last_transaction` - Days between the latest transaction and snapshot date.
+4. `average_monthly_transaction_count` - Transaction count divided by active-month count.
+5. `average_monthly_transaction_volume` - Total transaction volume divided by active-month count.
+6. `average_transaction_amount` - Average monetary amount per transaction.
+7. `net_cash_flow` - Total credited amount minus total debited amount.
+8. `average_balance` - Average recorded account balance.
+9. `latest_balance` - Balance associated with the latest available transaction.
+10. `negative_balance_percentage` - Percentage of records associated with a negative balance.
+11. `card_withdrawal_count` - Number of card-based cash withdrawals.
+12. `cash_deposit_count` - Number of cash-deposit transactions.
+13. `incoming_transfer_count` - Number of incoming transfers.
+14. `outgoing_transfer_count` - Number of outgoing transfers.",1105,132
+model_card_008_dead4dc645be,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Excluded Product Features,8,1,"Product-ownership fields such as `has_card`, `has_loan`, `payment_order_count`, and `banking_product_count` are intentionally excluded from training. They are used later to profile clusters and generate recommendations.
+
+Product ownership may be examined after model training to interpret and label clusters, but it does not directly determine the K-Means assignments.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Excluded Product Features
+
+Product-ownership fields such as `has_card`, `has_loan`, `payment_order_count`, and `banking_product_count` are intentionally excluded from training. They are used later to profile clusters and generate recommendations.
+
+Product ownership may be examined after model training to interpret and label clusters, but it does not directly determine the K-Means assignments.",368,46
+model_card_009_18ceaca291ca,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Missing-Value Validation,9,1,"Before training, the pipeline checks all clustering features for missing values. If any are present, the pipeline stops:
+
+```python
+if missing_values > 0:
+    raise ValueError(
+        f""Clustering features contain {missing_values} missing values.""
+    )
+```","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Missing-Value Validation
+
+Before training, the pipeline checks all clustering features for missing values. If any are present, the pipeline stops:
+
+```python
+if missing_values > 0:
+    raise ValueError(
+        f""Clustering features contain {missing_values} missing values.""
+    )
+```",258,33
+model_card_010_b7bdba775848,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Outlier Treatment,10,1,"For each feature, observations are capped at the 1st and 99th percentiles. Values outside these limits are replaced by the appropriate boundary. This reduces the influence of extreme observations while retaining every customer record.
+
+The clipping limits are saved so that future records can be processed consistently.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Outlier Treatment
+
+For each feature, observations are capped at the 1st and 99th percentiles. Values outside these limits are replaced by the appropriate boundary. This reduces the influence of extreme observations while retaining every customer record.
+
+The clipping limits are saved so that future records can be processed consistently.",319,47
+model_card_011_c283f07fb694,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Feature Transformation,11,1,"After capping, the pipeline applies:
+
+```python
+PowerTransformer(
+    method=""yeo-johnson"",
+    standardize=True,
+)
+```
+
+The Yeo-Johnson transformation reduces skewness and supports positive, zero, and negative values. Standardization prevents features with larger numeric scales from automatically dominating K-Means distance calculations.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Feature Transformation
+
+After capping, the pipeline applies:
+
+```python
+PowerTransformer(
+    method=""yeo-johnson"",
+    standardize=True,
+)
+```
+
+The Yeo-Johnson transformation reduces skewness and supports positive, zero, and negative values. Standardization prevents features with larger numeric scales from automatically dominating K-Means distance calculations.",340,36
+model_card_012_71a0be18f352,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > K-Means Configuration,12,1,"Candidate and final models use:
+
+```python
+KMeans(
+    n_clusters=cluster_count,
+    random_state=42,
+    n_init=20,
+)
+```
+
+`random_state=42` supports reproducibility. `n_init=20` runs K-Means with 20 centroid initializations and retains the best clustering objective.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > K-Means Configuration
+
+Candidate and final models use:
+
+```python
+KMeans(
+    n_clusters=cluster_count,
+    random_state=42,
+    n_init=20,
+)
+```
+
+`random_state=42` supports reproducibility. `n_init=20` runs K-Means with 20 centroid initializations and retains the best clustering objective.",268,28
+model_card_013_8cd2a223f1ab,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Cluster-Count Evaluation,13,1,"The pipeline evaluates candidate cluster counts from `k=2` through `k=8` using inertia, silhouette score, and Davies-Bouldin score.
+
+| Clusters | Inertia | Silhouette Score | Davies-Bouldin Score |
+|---:|---:|---:|---:|
+| 2 | 45,918.68 | 0.2665 | 1.4649 |
+| 3 | 40,234.79 | 0.2290 | 1.8095 |
+| 4 | 35,121.94 | 0.2271 | 1.5786 |
+| 5 | 31,240.28 | 0.2438 | 1.4554 |
+| 6 | 28,436.12 | 0.2451 | 1.5098 |
+| 7 | 26,361.99 | 0.2381 | 1.4293 |
+| 8 | 24,886.08 | 0.2445 | 1.4099 |
+
+The complete results are stored at:
+
+```text
+data/processed/segmentation/cluster_evaluation.csv
+```","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Cluster-Count Evaluation
+
+The pipeline evaluates candidate cluster counts from `k=2` through `k=8` using inertia, silhouette score, and Davies-Bouldin score.
+
+| Clusters | Inertia | Silhouette Score | Davies-Bouldin Score |
+|---:|---:|---:|---:|
+| 2 | 45,918.68 | 0.2665 | 1.4649 |
+| 3 | 40,234.79 | 0.2290 | 1.8095 |
+| 4 | 35,121.94 | 0.2271 | 1.5786 |
+| 5 | 31,240.28 | 0.2438 | 1.4554 |
+| 6 | 28,436.12 | 0.2451 | 1.5098 |
+| 7 | 26,361.99 | 0.2381 | 1.4293 |
+| 8 | 24,886.08 | 0.2445 | 1.4099 |
+
+The complete results are stored at:
+
+```text
+data/processed/segmentation/cluster_evaluation.csv
+```",572,101
+model_card_014_e4bee97e2e87,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Metric Interpretation > Inertia,14,1,"Inertia is the total squared distance between customers and their cluster centroids. Lower inertia indicates more compact clusters, but inertia naturally decreases as the number of clusters increases.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Metric Interpretation > Inertia
+
+Inertia is the total squared distance between customers and their cluster centroids. Lower inertia indicates more compact clusters, but inertia naturally decreases as the number of clusters increases.",200,28
+model_card_015_c8085f36065d,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Metric Interpretation > Silhouette Score,15,1,"The silhouette score compares similarity within a cluster with separation from other clusters. Higher is generally better. The highest tested value is 0.2665 for `k=2`, but two clusters are too broad for the project's behavioral and recommendation analysis.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Metric Interpretation > Silhouette Score
+
+The silhouette score compares similarity within a cluster with separation from other clusters. Higher is generally better. The highest tested value is 0.2665 for `k=2`, but two clusters are too broad for the project's behavioral and recommendation analysis.",257,38
+model_card_016_12457e465f9b,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Metric Interpretation > Davies-Bouldin Score,16,1,"The Davies-Bouldin score measures within-cluster similarity and separation between clusters. Lower is generally better. The lowest tested value is 1.4099 for `k=8`, but eight clusters increase fragmentation and interpretation complexity.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Metric Interpretation > Davies-Bouldin Score
+
+The Davies-Bouldin score measures within-cluster similarity and separation between clusters. Lower is generally better. The lowest tested value is 1.4099 for `k=8`, but eight clusters increase fragmentation and interpretation complexity.",237,30
+model_card_017_a141aab71120,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Final Model Selection,17,1,"The selected model uses five clusters:
+
+```text
+Inertia: 31,240.28
+Silhouette score: 0.2438
+Davies-Bouldin score: 1.4554
+```
+
+Five clusters were selected as a practical balance among compactness, separation, segment size, interpretability, behavioral differentiation, and recommendation usefulness. Selection was not based on optimizing only one metric.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Final Model Selection
+
+The selected model uses five clusters:
+
+```text
+Inertia: 31,240.28
+Silhouette score: 0.2438
+Davies-Bouldin score: 1.4554
+```
+
+Five clusters were selected as a practical balance among compactness, separation, segment size, interpretability, behavioral differentiation, and recommendation usefulness. Selection was not based on optimizing only one metric.",353,44
+model_card_018_b0ce56c0c379,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Final Customer Segments > Cluster 0: High-Value Multi-Product,18,1,"Highly active customers with high balances, transaction volume, and strong post-training product-ownership rates.
+
+```text
+1,464 customers
+32.53% of the portfolio
+```
+
+Product ownership supports the business label after clustering and is not a training feature.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Final Customer Segments > Cluster 0: High-Value Multi-Product
+
+Highly active customers with high balances, transaction volume, and strong post-training product-ownership rates.
+
+```text
+1,464 customers
+32.53% of the portfolio
+```
+
+Product ownership supports the business label after clustering and is not a training feature.",261,35
+model_card_019_f45a92bb3c0e,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Final Customer Segments > Cluster 1: Everyday Cash-Focused,19,1,"Regular customers with moderate balances and transaction activity, strong cash-deposit behavior, and comparatively limited card or loan ownership.
+
+```text
+1,409 customers
+31.31% of the portfolio
+```","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Final Customer Segments > Cluster 1: Everyday Cash-Focused
+
+Regular customers with moderate balances and transaction activity, strong cash-deposit behavior, and comparatively limited card or loan ownership.
+
+```text
+1,409 customers
+31.31% of the portfolio
+```",199,26
+model_card_020_cb16e2fa9e3c,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Final Customer Segments > Cluster 2: Mature Transfer-Focused,20,1,"Older customers with lower transaction values whose activity is concentrated primarily in account transfers.
+
+```text
+1,188 customers
+26.40% of the portfolio
+```","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Final Customer Segments > Cluster 2: Mature Transfer-Focused
+
+Older customers with lower transaction values whose activity is concentrated primarily in account transfers.
+
+```text
+1,188 customers
+26.40% of the portfolio
+```",161,22
+model_card_021_86eb7309113d,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Final Customer Segments > Cluster 3: High-Flow Financially Volatile,21,1,"Customers with high transaction volume and cash flow but elevated historical negative-balance activity.
+
+```text
+260 customers
+5.78% of the portfolio
+```
+
+The word volatile describes historical balance and transaction patterns. It is not a credit-risk, fraud, or financial-distress classification.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Final Customer Segments > Cluster 3: High-Flow Financially Volatile
+
+Customers with high transaction volume and cash flow but elevated historical negative-balance activity.
+
+```text
+260 customers
+5.78% of the portfolio
+```
+
+The word volatile describes historical balance and transaction patterns. It is not a credit-risk, fraud, or financial-distress classification.",297,39
+model_card_022_a2cf8ebfb80a,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Final Customer Segments > Cluster 4: Low-Engagement Dormant,22,1,"Customers with low transaction frequency, longer inactivity, and limited post-training recurring-payment and product engagement.
+
+```text
+179 customers
+3.98% of the portfolio
+```
+
+The model does not determine why a customer has limited activity.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Final Customer Segments > Cluster 4: Low-Engagement Dormant
+
+Customers with low transaction frequency, longer inactivity, and limited post-training recurring-payment and product engagement.
+
+```text
+179 customers
+3.98% of the portfolio
+```
+
+The model does not determine why a customer has limited activity.",245,33
+model_card_023_49304cc398d8,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Cluster Profiles,23,1,"After assignment, the pipeline calculates aggregate profiles including customer count, age, tenure, recency, monthly transaction activity, transaction amounts, cash flow, balances, negative-balance activity, card withdrawals, cash deposits, transfers, card and loan ownership rates, payment-order counts, and product counts.
+
+Cluster profiles describe group-level averages. They are not exact descriptions of every customer in a cluster.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Cluster Profiles
+
+After assignment, the pipeline calculates aggregate profiles including customer count, age, tenure, recency, monthly transaction activity, transaction amounts, cash flow, balances, negative-balance activity, card withdrawals, cash deposits, transfers, card and loan ownership rates, payment-order counts, and product counts.
+
+Cluster profiles describe group-level averages. They are not exact descriptions of every customer in a cluster.",437,54
+model_card_024_f0a05826add1,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Model Outputs,24,1,"Evaluation, profiles, and assignments are saved to:
+
+```text
+data/processed/segmentation/cluster_evaluation.csv
+data/processed/segmentation/cluster_profiles.csv
+data/processed/segmentation/customer_cluster_assignments.csv
+```
+
+The trained model and preprocessing artifacts are stored at:
+
+```text
+models/segmentation/customer_segmentation_pipeline.joblib
+```
+
+Database outputs are:
+
+```text
+ml.customer_segments
+ml.cluster_profiles
+```","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Model Outputs
+
+Evaluation, profiles, and assignments are saved to:
+
+```text
+data/processed/segmentation/cluster_evaluation.csv
+data/processed/segmentation/cluster_profiles.csv
+data/processed/segmentation/customer_cluster_assignments.csv
+```
+
+The trained model and preprocessing artifacts are stored at:
+
+```text
+models/segmentation/customer_segmentation_pipeline.joblib
+```
+
+Database outputs are:
+
+```text
+ml.customer_segments
+ml.cluster_profiles
+```",435,31
+model_card_025_180addc33646,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Saved Artifacts,25,1,"The Joblib artifact contains:
+
+```text
+model
+transformer
+clipping_limits
+feature_names
+cluster_count
+random_state
+segment_names
+segment_descriptions
+```
+
+Saving these components ensures that future records use the same feature order, clipping limits, transformation, standardization, trained model, and label mappings.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Saved Artifacts
+
+The Joblib artifact contains:
+
+```text
+model
+transformer
+clipping_limits
+feature_names
+cluster_count
+random_state
+segment_names
+segment_descriptions
+```
+
+Saving these components ensures that future records use the same feature order, clipping limits, transformation, standardization, trained model, and label mappings.",318,35
+model_card_026_f432aa11ce6d,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Model Versioning,26,1,"The current version is `kmeans_v1`. Each customer assignment includes `model_version`, `scored_at`, and `snapshot_date` for traceability.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Model Versioning
+
+The current version is `kmeans_v1`. Each customer assignment includes `model_version`, `scored_at`, and `snapshot_date` for traceability.",137,15
+model_card_027_42a19169582b,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Known Limitations > Historical dataset,27,1,The model uses historical anonymized data and must not be represented as a model trained on current banking behavior.,"Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Known Limitations > Historical dataset
+
+The model uses historical anonymized data and must not be represented as a model trained on current banking behavior.",117,19
+model_card_028_eebd3e1bd299,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Known Limitations > Moderate separation,28,1,"The silhouette scores show that the segments are not perfectly separated. Customer behavior often exists on a continuum, so cluster boundaries must not be treated as absolute.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Known Limitations > Moderate separation
+
+The silhouette scores show that the segments are not perfectly separated. Customer behavior often exists on a continuum, so cluster boundaries must not be treated as absolute.",175,27
+model_card_029_75d4ecb204f8,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Known Limitations > Sensitivity to preprocessing,29,1,"Assignments may change when feature definitions, clipping limits, transformations, scaling, source data, cluster count, random initialization, or software versions change.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Known Limitations > Sensitivity to preprocessing
+
+Assignments may change when feature definitions, clipping limits, transformations, scaling, source data, cluster count, random initialization, or software versions change.",171,20
+model_card_030_8d2fc0fcea35,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Known Limitations > Hard assignments,30,1,K-Means assigns every customer to exactly one cluster and does not express uncertainty or partial membership across segments.,"Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Known Limitations > Hard assignments
+
+K-Means assigns every customer to exactly one cluster and does not express uncertainty or partial membership across segments.",125,18
+model_card_031_1433ea93cd13,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Known Limitations > Human-created labels,31,1,K-Means produces numeric cluster identifiers. Segment names are human interpretations created after reviewing aggregate profiles.,"Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Known Limitations > Human-created labels
+
+K-Means produces numeric cluster identifiers. Segment names are human interpretations created after reviewing aggregate profiles.",129,15
+model_card_032_5745a179f7a4,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Known Limitations > No causal interpretation,32,1,The model identifies similarities and associations. It does not establish that one behavior causes another.,"Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Known Limitations > No causal interpretation
+
+The model identifies similarities and associations. It does not establish that one behavior causes another.",107,15
+model_card_033_dd6358a32924,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Known Limitations > No individual prediction,33,1,A cluster assignment summarizes similarity to a centroid. It does not predict an individual's future actions.,"Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Known Limitations > No individual prediction
+
+A cluster assignment summarizes similarity to a centroid. It does not predict an individual's future actions.",109,16
+model_card_034_4bca821eff3b,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Known Limitations > Limited context,34,1,"The model does not include customer goals, satisfaction, current economic conditions, digital interactions, marketing responses, preferences, or reasons for inactivity.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Known Limitations > Limited context
+
+The model does not include customer goals, satisfaction, current economic conditions, digital interactions, marketing responses, preferences, or reasons for inactivity.",168,20
+model_card_035_c27aa3872c7d,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Monitoring Recommendations,35,1,"When retraining or applying the pipeline to new data, monitor missing values, feature distributions, clipping limits, cluster sizes, profile changes, silhouette score, Davies-Bouldin score, inertia, segment stability, recommendation distribution, customer coverage, and model versions.
+
+Unexpected changes should be reviewed before new outputs are published.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Monitoring Recommendations
+
+When retraining or applying the pipeline to new data, monitor missing values, feature distributions, clipping limits, cluster sizes, profile changes, silhouette score, Davies-Bouldin score, inertia, segment stability, recommendation distribution, customer coverage, and model versions.
+
+Unexpected changes should be reviewed before new outputs are published.",358,44
+model_card_036_6c978469622b,model_card.md,Customer Segmentation Model Card,Customer Segmentation Model Card > Responsible AI Guidance,36,1,"The RAG assistant may explain model design, selected features, preprocessing, metrics, segment profiles, and limitations.
+
+It must not present cluster assignments as objective facts about a person, describe the model as a credit-risk model, claim that a segment predicts default or purchases, infer protected characteristics, make eligibility or lending decisions, make pricing decisions, or describe recommendation scores as probabilities.
+
+The assistant must distinguish among individual historical values, aggregate segment patterns, human-created labels, rule-based recommendations, and predictions that this model does not produce.","Document: Customer Segmentation Model Card
+Section: Customer Segmentation Model Card > Responsible AI Guidance
+
+The RAG assistant may explain model design, selected features, preprocessing, metrics, segment profiles, and limitations.
+
+It must not present cluster assignments as objective facts about a person, describe the model as a credit-risk model, claim that a segment predicts default or purchases, infer protected characteristics, make eligibility or lending decisions, make pricing decisions, or describe recommendation scores as probabilities.
+
+The assistant must distinguish among individual historical values, aggregate segment patterns, human-created labels, rule-based recommendations, and predictions that this model does not produce.",636,82
+pipeline_architecture_001_3d14114151c8,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Purpose,1,1,"This document explains the end-to-end architecture of the Banking Customer
+Segmentation and Product Recommendation Platform.
+
+The platform converts historical anonymized banking data into:
+
+- Validated PostgreSQL source tables.
+- Clean dbt staging models.
+- Customer 360 analytics features.
+- Behavioral customer segments.
+- Explainable product recommendations.
+- Local and publicly deployed Streamlit dashboards.
+- A future RAG-powered banking analytics assistant.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Purpose
+
+This document explains the end-to-end architecture of the Banking Customer
+Segmentation and Product Recommendation Platform.
+
+The platform converts historical anonymized banking data into:
+
+- Validated PostgreSQL source tables.
+- Clean dbt staging models.
+- Customer 360 analytics features.
+- Behavioral customer segments.
+- Explainable product recommendations.
+- Local and publicly deployed Streamlit dashboards.
+- A future RAG-powered banking analytics assistant.",465,60
+pipeline_architecture_002_2e3d1b180e4a,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > High-Level Architecture,2,1,"```mermaid
+flowchart TD
+    A[PKDD Banking Files] --> B[Python Ingestion]
+    B --> C[(PostgreSQL Raw Schema)]
+    C --> D[dbt Staging Models]
+    D --> E[dbt Intermediate Models]
+    E --> F[Customer 360 Marts]
+    F --> G[K-Means Segmentation]
+    G --> H[Rule-Based Recommendations]
+    H --> I[Analytics Marts]
+    I --> J[Local Streamlit Dashboard]
+    I --> K[Validated CSV Export]
+    K --> L[Streamlit Cloud Dashboard]
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > High-Level Architecture
+
+```mermaid
+flowchart TD
+    A[PKDD Banking Files] --> B[Python Ingestion]
+    B --> C[(PostgreSQL Raw Schema)]
+    C --> D[dbt Staging Models]
+    D --> E[dbt Intermediate Models]
+    E --> F[Customer 360 Marts]
+    F --> G[K-Means Segmentation]
+    G --> H[Rule-Based Recommendations]
+    H --> I[Analytics Marts]
+    I --> J[Local Streamlit Dashboard]
+    I --> K[Validated CSV Export]
+    K --> L[Streamlit Cloud Dashboard]
+```",430,57
+pipeline_architecture_003_f61ed0faa57f,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Source Dataset,3,1,"The project uses the anonymized PKDD'99 Czech banking dataset.
+
+The source files represent eight related entities:
+
+| Source | Records |
+|---|---:|
+| Accounts | 4,500 |
+| Cards | 892 |
+| Clients | 5,369 |
+| Dispositions | 5,369 |
+| Districts | 77 |
+| Loans | 682 |
+| Payment orders | 6,471 |
+| Transactions | 1,056,320 |
+
+The dataset is historical. Dates, monetary values, and customer behavior
+must not be presented as current banking activity.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Source Dataset
+
+The project uses the anonymized PKDD'99 Czech banking dataset.
+
+The source files represent eight related entities:
+
+| Source | Records |
+|---|---:|
+| Accounts | 4,500 |
+| Cards | 892 |
+| Clients | 5,369 |
+| Dispositions | 5,369 |
+| Districts | 77 |
+| Loans | 682 |
+| Payment orders | 6,471 |
+| Transactions | 1,056,320 |
+
+The dataset is historical. Dates, monetary values, and customer behavior
+must not be presented as current banking activity.",445,81
+pipeline_architecture_004_c4b88fe28107,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Project Layers,4,1,"The platform follows a layered analytics architecture:
+
+```text
+Source Files
+    ↓
+Raw PostgreSQL Tables
+    ↓
+dbt Staging Models
+    ↓
+dbt Intermediate Models
+    ↓
+dbt Analytics Marts
+    ↓
+Machine-Learning Outputs
+    ↓
+Recommendation Outputs
+    ↓
+Dashboard and AI Applications
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Project Layers
+
+The platform follows a layered analytics architecture:
+
+```text
+Source Files
+    ↓
+Raw PostgreSQL Tables
+    ↓
+dbt Staging Models
+    ↓
+dbt Intermediate Models
+    ↓
+dbt Analytics Marts
+    ↓
+Machine-Learning Outputs
+    ↓
+Recommendation Outputs
+    ↓
+Dashboard and AI Applications
+```",285,38
+pipeline_architecture_005_8ca0b3419c8e,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 1: Source Files,5,1,"The original source files are stored locally under:
+
+```text
+data/raw/
+```
+
+The files contain anonymized relational banking records.
+
+Raw source files are excluded from Git using `.gitignore`.
+
+The source manifest is configured in:
+
+```text
+config/source_tables.yml
+```
+
+This configuration defines source filenames, destination tables, and
+loading behavior.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 1: Source Files
+
+The original source files are stored locally under:
+
+```text
+data/raw/
+```
+
+The files contain anonymized relational banking records.
+
+Raw source files are excluded from Git using `.gitignore`.
+
+The source manifest is configured in:
+
+```text
+config/source_tables.yml
+```
+
+This configuration defines source filenames, destination tables, and
+loading behavior.",357,46
+pipeline_architecture_006_1099fb9792b4,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 2: Python Ingestion,6,1,"The ingestion pipeline is implemented in:
+
+```text
+src/extraction/load_raw_data.py
+```
+
+Its responsibilities include:
+
+- Reading source files.
+- Applying source-specific parsing rules.
+- Loading data into PostgreSQL.
+- Preserving source record counts.
+- Adding ingestion metadata where configured.
+- Validating loaded row counts.
+- Reporting reconciliation results.
+
+Environment validation is implemented in:
+
+```text
+src/extraction/check_environment.py
+```
+
+The environment checker verifies required configuration and connectivity
+before the pipeline runs.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 2: Python Ingestion
+
+The ingestion pipeline is implemented in:
+
+```text
+src/extraction/load_raw_data.py
+```
+
+Its responsibilities include:
+
+- Reading source files.
+- Applying source-specific parsing rules.
+- Loading data into PostgreSQL.
+- Preserving source record counts.
+- Adding ingestion metadata where configured.
+- Validating loaded row counts.
+- Reporting reconciliation results.
+
+Environment validation is implemented in:
+
+```text
+src/extraction/check_environment.py
+```
+
+The environment checker verifies required configuration and connectivity
+before the pipeline runs.",557,66
+pipeline_architecture_007_ba08bde1e4fc,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 3: PostgreSQL,7,1,"PostgreSQL is the central data store for local development.
+
+The database is:
+
+```text
+banking_analytics
+```
+
+The project uses the following schemas:
+
+| Schema | Purpose |
+|---|---|
+| `raw` | Original ingested source tables |
+| `staging` | Cleaned and standardized dbt models |
+| `analytics` | Customer 360 and reporting marts |
+| `ml` | Machine-learning and recommendation outputs |
+| `public` | Default PostgreSQL schema |
+
+PostgreSQL runs locally through Docker.
+
+The container uses PostgreSQL port:
+
+```text
+5432
+```
+
+The host machine connects through port:
+
+```text
+5433
+```
+
+The Docker container is named:
+
+```text
+banking_analytics_postgres
+```
+
+Credentials are loaded from the local `.env` file.
+
+The `.env` file is excluded from Git and must never be committed.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 3: PostgreSQL
+
+PostgreSQL is the central data store for local development.
+
+The database is:
+
+```text
+banking_analytics
+```
+
+The project uses the following schemas:
+
+| Schema | Purpose |
+|---|---|
+| `raw` | Original ingested source tables |
+| `staging` | Cleaned and standardized dbt models |
+| `analytics` | Customer 360 and reporting marts |
+| `ml` | Machine-learning and recommendation outputs |
+| `public` | Default PostgreSQL schema |
+
+PostgreSQL runs locally through Docker.
+
+The container uses PostgreSQL port:
+
+```text
+5432
+```
+
+The host machine connects through port:
+
+```text
+5433
+```
+
+The Docker container is named:
+
+```text
+banking_analytics_postgres
+```
+
+Credentials are loaded from the local `.env` file.
+
+The `.env` file is excluded from Git and must never be committed.",770,118
+pipeline_architecture_008_014c40e3ef90,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > PostgreSQL Initialization,8,1,"Database schemas and raw tables are created using:
+
+```text
+sql/init/001_create_schemas.sql
+sql/init/002_create_raw_tables.sql
+```
+
+The Docker Compose configuration is stored in:
+
+```text
+docker-compose.yml
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > PostgreSQL Initialization
+
+Database schemas and raw tables are created using:
+
+```text
+sql/init/001_create_schemas.sql
+sql/init/002_create_raw_tables.sql
+```
+
+The Docker Compose configuration is stored in:
+
+```text
+docker-compose.yml
+```",210,22
+pipeline_architecture_009_26a14ac4a570,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 4: dbt Staging Models,9,1,"dbt transforms raw source tables into standardized staging models.
+
+The source definitions are stored in:
+
+```text
+dbt/models/staging/_sources.yml
+```
+
+The staging models are:
+
+```text
+stg_accounts.sql
+stg_cards.sql
+stg_clients.sql
+stg_dispositions.sql
+stg_districts.sql
+stg_loans.sql
+stg_payment_orders.sql
+stg_transactions.sql
+```
+
+Staging models are responsible for:
+
+- Renaming source columns.
+- Applying consistent data types.
+- Standardizing source values.
+- Creating business-readable fields.
+- Preserving source identifiers.
+- Preparing clean inputs for downstream models.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 4: dbt Staging Models
+
+dbt transforms raw source tables into standardized staging models.
+
+The source definitions are stored in:
+
+```text
+dbt/models/staging/_sources.yml
+```
+
+The staging models are:
+
+```text
+stg_accounts.sql
+stg_cards.sql
+stg_clients.sql
+stg_dispositions.sql
+stg_districts.sql
+stg_loans.sql
+stg_payment_orders.sql
+stg_transactions.sql
+```
+
+Staging models are responsible for:
+
+- Renaming source columns.
+- Applying consistent data types.
+- Standardizing source values.
+- Creating business-readable fields.
+- Preserving source identifiers.
+- Preparing clean inputs for downstream models.",580,65
+pipeline_architecture_010_3b9f146dd22e,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 5: dbt Intermediate Models,10,1,"The intermediate transaction model is:
+
+```text
+dbt/models/intermediate/int_account_transaction_features.sql
+```
+
+It aggregates transaction-level records into account-level behavioral
+features.
+
+Examples include:
+
+- Transaction counts.
+- Credit and debit amounts.
+- Total transaction volume.
+- Average transaction amounts.
+- Net cash flow.
+- Balance statistics.
+- Negative-balance activity.
+- Card withdrawals.
+- Cash deposits.
+- Incoming transfers.
+- Outgoing transfers.
+- First and last transaction dates.
+
+The intermediate layer prevents repeated transaction aggregation in
+downstream marts.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 5: dbt Intermediate Models
+
+The intermediate transaction model is:
+
+```text
+dbt/models/intermediate/int_account_transaction_features.sql
+```
+
+It aggregates transaction-level records into account-level behavioral
+features.
+
+Examples include:
+
+- Transaction counts.
+- Credit and debit amounts.
+- Total transaction volume.
+- Average transaction amounts.
+- Net cash flow.
+- Balance statistics.
+- Negative-balance activity.
+- Card withdrawals.
+- Cash deposits.
+- Incoming transfers.
+- Outgoing transfers.
+- First and last transaction dates.
+
+The intermediate layer prevents repeated transaction aggregation in
+downstream marts.",594,72
+pipeline_architecture_011_011c93990d43,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 6: Customer 360 Mart,11,1,"The main Customer 360 model is:
+
+```text
+dbt/models/marts/mart_customer_360.sql
+```
+
+It creates one analytics record per primary customer and account
+relationship.
+
+The mart combines:
+
+- Customer profile information.
+- Account information.
+- District context.
+- Transaction behavior.
+- Balance behavior.
+- Card ownership.
+- Loan ownership.
+- Payment-order activity.
+- Banking-product count.
+- Snapshot metadata.
+
+The Customer 360 mart is stored as:
+
+```text
+analytics.mart_customer_360
+```
+
+The current mart contains:
+
+```text
+4,500 customer records
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 6: Customer 360 Mart
+
+The main Customer 360 model is:
+
+```text
+dbt/models/marts/mart_customer_360.sql
+```
+
+It creates one analytics record per primary customer and account
+relationship.
+
+The mart combines:
+
+- Customer profile information.
+- Account information.
+- District context.
+- Transaction behavior.
+- Balance behavior.
+- Card ownership.
+- Loan ownership.
+- Payment-order activity.
+- Banking-product count.
+- Snapshot metadata.
+
+The Customer 360 mart is stored as:
+
+```text
+analytics.mart_customer_360
+```
+
+The current mart contains:
+
+```text
+4,500 customer records
+```",553,73
+pipeline_architecture_012_de994a36142f,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 7: Segmentation Feature Mart,12,1,"The segmentation feature model is:
+
+```text
+dbt/models/marts/mart_customer_segmentation_features.sql
+```
+
+It prepares customer-level variables required by the K-Means pipeline.
+
+It includes the 14 clustering features:
+
+```text
+customer_age_at_snapshot
+account_tenure_months
+days_since_last_transaction
+average_monthly_transaction_count
+average_monthly_transaction_volume
+average_transaction_amount
+net_cash_flow
+average_balance
+latest_balance
+negative_balance_percentage
+card_withdrawal_count
+cash_deposit_count
+incoming_transfer_count
+outgoing_transfer_count
+```
+
+The database relation is:
+
+```text
+analytics.mart_customer_segmentation_features
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 7: Segmentation Feature Mart
+
+The segmentation feature model is:
+
+```text
+dbt/models/marts/mart_customer_segmentation_features.sql
+```
+
+It prepares customer-level variables required by the K-Means pipeline.
+
+It includes the 14 clustering features:
+
+```text
+customer_age_at_snapshot
+account_tenure_months
+days_since_last_transaction
+average_monthly_transaction_count
+average_monthly_transaction_volume
+average_transaction_amount
+net_cash_flow
+average_balance
+latest_balance
+negative_balance_percentage
+card_withdrawal_count
+cash_deposit_count
+incoming_transfer_count
+outgoing_transfer_count
+```
+
+The database relation is:
+
+```text
+analytics.mart_customer_segmentation_features
+```",649,46
+pipeline_architecture_013_6263ba7ce7f1,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 8: K-Means Segmentation,13,1,"The segmentation pipeline is implemented in:
+
+```text
+src/segmentation/train_segmentation.py
+```
+
+The pipeline:
+
+1. Loads the segmentation feature mart.
+2. Validates that clustering features have no missing values.
+3. Caps every feature at its 1st and 99th percentiles.
+4. Applies a Yeo-Johnson transformation.
+5. Standardizes the transformed features.
+6. Evaluates K-Means models from `k=2` through `k=8`.
+7. Trains the selected five-cluster model.
+8. Creates business-readable cluster profiles.
+9. Saves model artifacts.
+10. Writes assignments and profiles to PostgreSQL.
+
+The selected model uses:
+
+```text
+K-Means
+5 clusters
+random_state = 42
+n_init = 20
+```
+
+The model version is:
+
+```text
+kmeans_v1
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 8: K-Means Segmentation
+
+The segmentation pipeline is implemented in:
+
+```text
+src/segmentation/train_segmentation.py
+```
+
+The pipeline:
+
+1. Loads the segmentation feature mart.
+2. Validates that clustering features have no missing values.
+3. Caps every feature at its 1st and 99th percentiles.
+4. Applies a Yeo-Johnson transformation.
+5. Standardizes the transformed features.
+6. Evaluates K-Means models from `k=2` through `k=8`.
+7. Trains the selected five-cluster model.
+8. Creates business-readable cluster profiles.
+9. Saves model artifacts.
+10. Writes assignments and profiles to PostgreSQL.
+
+The selected model uses:
+
+```text
+K-Means
+5 clusters
+random_state = 42
+n_init = 20
+```
+
+The model version is:
+
+```text
+kmeans_v1
+```",707,98
+pipeline_architecture_014_b3f81f19633e,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Segmentation Outputs,14,1,"The segmentation pipeline creates:
+
+```text
+data/processed/segmentation/cluster_evaluation.csv
+data/processed/segmentation/cluster_profiles.csv
+data/processed/segmentation/customer_cluster_assignments.csv
+```
+
+The saved model artifact is:
+
+```text
+models/segmentation/customer_segmentation_pipeline.joblib
+```
+
+Database outputs are:
+
+```text
+ml.customer_segments
+ml.cluster_profiles
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Segmentation Outputs
+
+The segmentation pipeline creates:
+
+```text
+data/processed/segmentation/cluster_evaluation.csv
+data/processed/segmentation/cluster_profiles.csv
+data/processed/segmentation/customer_cluster_assignments.csv
+```
+
+The saved model artifact is:
+
+```text
+models/segmentation/customer_segmentation_pipeline.joblib
+```
+
+Database outputs are:
+
+```text
+ml.customer_segments
+ml.cluster_profiles
+```",386,24
+pipeline_architecture_015_c6ec8bddb4f5,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 9: Customer Segment Mart,15,1,"dbt joins the Customer 360 mart with the latest model assignments.
+
+The model is:
+
+```text
+dbt/models/marts/mart_customer_segments.sql
+```
+
+The resulting relation is:
+
+```text
+analytics.mart_customer_segments
+```
+
+It contains the complete Customer 360 fields plus:
+
+- Cluster identifier.
+- Segment name.
+- Segment description.
+- Model version.
+- Scoring timestamp.
+
+This mart is the primary customer dataset used by the dashboard and
+recommendation engine.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 9: Customer Segment Mart
+
+dbt joins the Customer 360 mart with the latest model assignments.
+
+The model is:
+
+```text
+dbt/models/marts/mart_customer_segments.sql
+```
+
+The resulting relation is:
+
+```text
+analytics.mart_customer_segments
+```
+
+It contains the complete Customer 360 fields plus:
+
+- Cluster identifier.
+- Segment name.
+- Segment description.
+- Model version.
+- Scoring timestamp.
+
+This mart is the primary customer dataset used by the dashboard and
+recommendation engine.",456,61
+pipeline_architecture_016_7274c97e2327,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 10: Product Recommendations,16,1,"The recommendation pipeline is implemented in:
+
+```text
+src/recommendations/generate_recommendations.py
+```
+
+It uses transparent business rules based on:
+
+- Current product ownership.
+- Recent account activity.
+- Average monthly transaction frequency.
+- Net cash flow.
+- Average and latest balances.
+- Negative-balance activity.
+- Scheduled payment orders.
+- Customer segment.
+
+The recommendation version is:
+
+```text
+rules_v1
+```
+
+The pipeline evaluates six recommendation types:
+
+```text
+Payment Card
+Personal Loan Consultation
+Savings Account
+Overdraft Protection
+Automatic Payment Setup
+Account Re-Engagement Review
+```
+
+The pipeline retains a maximum of three recommendations per customer.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 10: Product Recommendations
+
+The recommendation pipeline is implemented in:
+
+```text
+src/recommendations/generate_recommendations.py
+```
+
+It uses transparent business rules based on:
+
+- Current product ownership.
+- Recent account activity.
+- Average monthly transaction frequency.
+- Net cash flow.
+- Average and latest balances.
+- Negative-balance activity.
+- Scheduled payment orders.
+- Customer segment.
+
+The recommendation version is:
+
+```text
+rules_v1
+```
+
+The pipeline evaluates six recommendation types:
+
+```text
+Payment Card
+Personal Loan Consultation
+Savings Account
+Overdraft Protection
+Automatic Payment Setup
+Account Re-Engagement Review
+```
+
+The pipeline retains a maximum of three recommendations per customer.",694,88
+pipeline_architecture_017_b703b69d0f8b,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Recommendation Outputs,17,1,"Recommendations are saved to:
+
+```text
+data/processed/recommendations/customer_product_recommendations.csv
+```
+
+The machine-learning database output is:
+
+```text
+ml.product_recommendations
+```
+
+The analytics-ready dbt mart is:
+
+```text
+analytics.mart_product_recommendations
+```
+
+The current validated output contains:
+
+```text
+12,175 recommendations
+4,500 customers with recommendations
+6 product types
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Recommendation Outputs
+
+Recommendations are saved to:
+
+```text
+data/processed/recommendations/customer_product_recommendations.csv
+```
+
+The machine-learning database output is:
+
+```text
+ml.product_recommendations
+```
+
+The analytics-ready dbt mart is:
+
+```text
+analytics.mart_product_recommendations
+```
+
+The current validated output contains:
+
+```text
+12,175 recommendations
+4,500 customers with recommendations
+6 product types
+```",407,39
+pipeline_architecture_018_c7a56d87e467,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 11: dbt Testing and Validation,18,1,"dbt YAML files define tests for:
+
+- Required identifiers.
+- Unique identifiers.
+- Accepted cluster values.
+- Required model versions.
+- Required timestamps.
+- Valid recommendation ranks.
+- Valid recommendation scores.
+- Recommendation uniqueness.
+- Customer coverage.
+- Mart integrity.
+
+The completed pipeline currently reports:
+
+```text
+PASS=167
+WARN=0
+ERROR=0
+SKIP=0
+```
+
+Testing definitions are located throughout:
+
+```text
+dbt/models/staging/
+dbt/models/marts/
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 11: dbt Testing and Validation
+
+dbt YAML files define tests for:
+
+- Required identifiers.
+- Unique identifiers.
+- Accepted cluster values.
+- Required model versions.
+- Required timestamps.
+- Valid recommendation ranks.
+- Valid recommendation scores.
+- Recommendation uniqueness.
+- Customer coverage.
+- Mart integrity.
+
+The completed pipeline currently reports:
+
+```text
+PASS=167
+WARN=0
+ERROR=0
+SKIP=0
+```
+
+Testing definitions are located throughout:
+
+```text
+dbt/models/staging/
+dbt/models/marts/
+```",468,60
+pipeline_architecture_019_17e667ee3c51,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 12: Pipeline Orchestration,19,1,"The complete local workflow is coordinated through:
+
+```text
+run_pipeline.py
+```
+
+The pipeline executes the required processing stages in sequence and stops
+when a required stage fails.
+
+The overall workflow includes:
+
+1. Environment validation.
+2. Raw data ingestion.
+3. Source profiling and validation.
+4. dbt transformations.
+5. dbt tests.
+6. Customer segmentation.
+7. Product recommendations.
+8. Recommendation marts.
+9. Final validation.
+
+A successful execution ends with:
+
+```text
+PIPELINE COMPLETED SUCCESSFULLY
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 12: Pipeline Orchestration
+
+The complete local workflow is coordinated through:
+
+```text
+run_pipeline.py
+```
+
+The pipeline executes the required processing stages in sequence and stops
+when a required stage fails.
+
+The overall workflow includes:
+
+1. Environment validation.
+2. Raw data ingestion.
+3. Source profiling and validation.
+4. dbt transformations.
+5. dbt tests.
+6. Customer segmentation.
+7. Product recommendations.
+8. Recommendation marts.
+9. Final validation.
+
+A successful execution ends with:
+
+```text
+PIPELINE COMPLETED SUCCESSFULLY
+```",522,70
+pipeline_architecture_020_57df433da29a,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 13: Local Streamlit Dashboard,20,1,"The local dashboard is:
+
+```text
+dashboards/app_v2.py
+```
+
+It reads directly from PostgreSQL.
+
+The local dashboard requires:
+
+- Docker Desktop.
+- The PostgreSQL container.
+- A configured `.env` file.
+- The completed analytics pipeline.
+
+It includes five tabs:
+
+```text
+Overview
+Segments
+Recommendations
+Customer 360
+Model Insights
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 13: Local Streamlit Dashboard
+
+The local dashboard is:
+
+```text
+dashboards/app_v2.py
+```
+
+It reads directly from PostgreSQL.
+
+The local dashboard requires:
+
+- Docker Desktop.
+- The PostgreSQL container.
+- A configured `.env` file.
+- The completed analytics pipeline.
+
+It includes five tabs:
+
+```text
+Overview
+Segments
+Recommendations
+Customer 360
+Model Insights
+```",334,46
+pipeline_architecture_021_ea117e52f22e,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 14: Dashboard Data Export,21,1,"The public Streamlit application cannot connect to a PostgreSQL container
+running on a local computer.
+
+The export utility is:
+
+```text
+dashboards/export_dashboard_data.py
+```
+
+It reads the validated analytics marts and creates:
+
+```text
+data/dashboard/customer_segments.csv
+data/dashboard/product_recommendations.csv
+```
+
+The export validates:
+
+- Customer identifiers.
+- Customer uniqueness.
+- Segment completeness.
+- Recommendation completeness.
+- Customer-product uniqueness.
+- Recommendation score ranges.
+- Recommendation rank ranges.
+- Customer-reference integrity.
+
+The current deployment snapshot contains:
+
+```text
+4,500 customers
+5 segments
+12,175 recommendations
+4,500 customers with recommendations
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 14: Dashboard Data Export
+
+The public Streamlit application cannot connect to a PostgreSQL container
+running on a local computer.
+
+The export utility is:
+
+```text
+dashboards/export_dashboard_data.py
+```
+
+It reads the validated analytics marts and creates:
+
+```text
+data/dashboard/customer_segments.csv
+data/dashboard/product_recommendations.csv
+```
+
+The export validates:
+
+- Customer identifiers.
+- Customer uniqueness.
+- Segment completeness.
+- Recommendation completeness.
+- Customer-product uniqueness.
+- Recommendation score ranges.
+- Recommendation rank ranges.
+- Customer-reference integrity.
+
+The current deployment snapshot contains:
+
+```text
+4,500 customers
+5 segments
+12,175 recommendations
+4,500 customers with recommendations
+```",714,80
+pipeline_architecture_022_54c55df09eeb,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 15: Public Streamlit Dashboard,22,1,"The deployment dashboard is:
+
+```text
+dashboards/app_deployed.py
+```
+
+It reads the validated CSV snapshot instead of connecting to PostgreSQL.
+
+This allows the application to run on Streamlit Community Cloud without:
+
+- Local Docker.
+- Local PostgreSQL.
+- Database credentials.
+- Public database access.
+
+The public application is available at:
+
+```text
+https://banking-customer-segmentation-intelligence.streamlit.app
+```
+
+The deployment-specific dependencies are defined in:
+
+```text
+dashboards/requirements.txt
+```
+
+The Streamlit theme configuration is stored at:
+
+```text
+.streamlit/config.toml
+```","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 15: Public Streamlit Dashboard
+
+The deployment dashboard is:
+
+```text
+dashboards/app_deployed.py
+```
+
+It reads the validated CSV snapshot instead of connecting to PostgreSQL.
+
+This allows the application to run on Streamlit Community Cloud without:
+
+- Local Docker.
+- Local PostgreSQL.
+- Database credentials.
+- Public database access.
+
+The public application is available at:
+
+```text
+https://banking-customer-segmentation-intelligence.streamlit.app
+```
+
+The deployment-specific dependencies are defined in:
+
+```text
+dashboards/requirements.txt
+```
+
+The Streamlit theme configuration is stored at:
+
+```text
+.streamlit/config.toml
+```",602,70
+pipeline_architecture_023_a0ea260a084c,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Local and Deployed Dashboard Comparison,23,1,"| Component | Local Dashboard | Deployed Dashboard |
+|---|---|---|
+| Application | `app_v2.py` | `app_deployed.py` |
+| Data source | PostgreSQL | Validated CSV snapshot |
+| Docker required | Yes | No |
+| `.env` required | Yes | No |
+| Publicly accessible | No | Yes |
+| Refresh method | Query current marts | Export CSV and push to GitHub |","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Local and Deployed Dashboard Comparison
+
+| Component | Local Dashboard | Deployed Dashboard |
+|---|---|---|
+| Application | `app_v2.py` | `app_deployed.py` |
+| Data source | PostgreSQL | Validated CSV snapshot |
+| Docker required | Yes | No |
+| `.env` required | Yes | No |
+| Publicly accessible | No | Yes |
+| Refresh method | Query current marts | Export CSV and push to GitHub |",340,66
+pipeline_architecture_024_6e956ef60ba6,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Dashboard Data Refresh,24,1,"When the local pipeline generates updated results, the deployed snapshot
+can be refreshed using:
+
+```powershell
+python run_pipeline.py
+python dashboards\export_dashboard_data.py
+git add data/dashboard/
+git commit -m ""Refresh dashboard data""
+git push origin main
+```
+
+Streamlit Community Cloud automatically redeploys after updated files are
+pushed to GitHub.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Dashboard Data Refresh
+
+When the local pipeline generates updated results, the deployed snapshot
+can be refreshed using:
+
+```powershell
+python run_pipeline.py
+python dashboards\export_dashboard_data.py
+git add data/dashboard/
+git commit -m ""Refresh dashboard data""
+git push origin main
+```
+
+Streamlit Community Cloud automatically redeploys after updated files are
+pushed to GitHub.",358,45
+pipeline_architecture_025_2e283e19064b,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Layer 16: GitHub Actions,25,1,"GitHub Actions provides continuous-integration checks when code is pushed
+or a pull request is opened.
+
+The workflow helps validate:
+
+- Python installation.
+- Dependency installation.
+- Source-manifest tests.
+- Project-level automated checks.
+
+The CI workflow does not contain local database credentials.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Layer 16: GitHub Actions
+
+GitHub Actions provides continuous-integration checks when code is pushed
+or a pull request is opened.
+
+The workflow helps validate:
+
+- Python installation.
+- Dependency installation.
+- Source-manifest tests.
+- Project-level automated checks.
+
+The CI workflow does not contain local database credentials.",304,41
+pipeline_architecture_026_324f4d26bc10,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Planned RAG Layer,26,1,"The RAG pipeline will add a controlled AI interface over project
+documentation and approved analytics functions.
+
+The planned flow is:
+
+```mermaid
+flowchart TD
+    A[User Question] --> B[Question Router]
+    B --> C[Knowledge Retrieval]
+    B --> D[Approved Analytics Tools]
+    C --> E[Relevant Document Chunks]
+    D --> F[Verified Data Results]
+    E --> G[Grounded LLM Prompt]
+    F --> G
+    G --> H[Answer with Sources]
+```
+
+The knowledge base is stored in:
+
+```text
+docs/knowledge_base/
+```
+
+The RAG source code will be stored in:
+
+```text
+src/rag/
+```
+
+Generated chunks and embeddings will be stored in:
+
+```text
+data/rag/
+```
+
+The RAG assistant will explain:
+
+- Customer segments.
+- Recommendation rules.
+- Data fields.
+- Model evaluation.
+- Pipeline architecture.
+- Responsible-use requirements.
+
+Customer-specific and numerical questions will use approved analytics
+functions rather than unrestricted LLM-generated SQL.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Planned RAG Layer
+
+The RAG pipeline will add a controlled AI interface over project
+documentation and approved analytics functions.
+
+The planned flow is:
+
+```mermaid
+flowchart TD
+    A[User Question] --> B[Question Router]
+    B --> C[Knowledge Retrieval]
+    B --> D[Approved Analytics Tools]
+    C --> E[Relevant Document Chunks]
+    D --> F[Verified Data Results]
+    E --> G[Grounded LLM Prompt]
+    F --> G
+    G --> H[Answer with Sources]
+```
+
+The knowledge base is stored in:
+
+```text
+docs/knowledge_base/
+```
+
+The RAG source code will be stored in:
+
+```text
+src/rag/
+```
+
+Generated chunks and embeddings will be stored in:
+
+```text
+data/rag/
+```
+
+The RAG assistant will explain:
+
+- Customer segments.
+- Recommendation rules.
+- Data fields.
+- Model evaluation.
+- Pipeline architecture.
+- Responsible-use requirements.
+
+Customer-specific and numerical questions will use approved analytics
+functions rather than unrestricted LLM-generated SQL.",930,129
+pipeline_architecture_027_b51842863a3f,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Security Controls,27,1,"The project follows these controls:
+
+- `.env` is excluded from Git.
+- Database passwords are not stored in source code.
+- Local PostgreSQL is not exposed to the public dashboard.
+- Raw source files are excluded from Git.
+- Public deployment uses a validated analytics snapshot.
+- API credentials for the future RAG assistant will use Streamlit secrets.
+- The LLM will not receive unrestricted database access.
+- The LLM will not generate or execute arbitrary SQL.
+- Customer identifiers remain anonymized.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Security Controls
+
+The project follows these controls:
+
+- `.env` is excluded from Git.
+- Database passwords are not stored in source code.
+- Local PostgreSQL is not exposed to the public dashboard.
+- Raw source files are excluded from Git.
+- Public deployment uses a validated analytics snapshot.
+- API credentials for the future RAG assistant will use Streamlit secrets.
+- The LLM will not receive unrestricted database access.
+- The LLM will not generate or execute arbitrary SQL.
+- Customer identifiers remain anonymized.",505,82
+pipeline_architecture_028_db2582c5cf9e,pipeline_architecture.md,Banking Analytics Pipeline Architecture,Banking Analytics Pipeline Architecture > Responsible Interpretation,28,1,"The platform is intended for:
+
+- Data-engineering demonstrations.
+- Analytics demonstrations.
+- Customer-segmentation exploration.
+- Explainable recommendation demonstrations.
+- RAG and responsible-AI demonstrations.
+- Educational and portfolio purposes.
+
+The platform must not be used for:
+
+- Real-world banking decisions.
+- Loan approval or rejection.
+- Product eligibility.
+- Credit scoring.
+- Interest-rate or pricing decisions.
+- Adverse actions.
+- Fraud accusations.
+- Claims about protected characteristics.
+- Predictions presented as facts about an individual.
+
+All outputs should clearly distinguish between:
+
+- Historical source data.
+- Derived customer features.
+- Group-level segment patterns.
+- Human-created segment labels.
+- Rule-based recommendations.
+- AI-generated explanations.","Document: Banking Analytics Pipeline Architecture
+Section: Banking Analytics Pipeline Architecture > Responsible Interpretation
+
+The platform is intended for:
+
+- Data-engineering demonstrations.
+- Analytics demonstrations.
+- Customer-segmentation exploration.
+- Explainable recommendation demonstrations.
+- RAG and responsible-AI demonstrations.
+- Educational and portfolio purposes.
+
+The platform must not be used for:
+
+- Real-world banking decisions.
+- Loan approval or rejection.
+- Product eligibility.
+- Credit scoring.
+- Interest-rate or pricing decisions.
+- Adverse actions.
+- Fraud accusations.
+- Claims about protected characteristics.
+- Predictions presented as facts about an individual.
+
+All outputs should clearly distinguish between:
+
+- Historical source data.
+- Derived customer features.
+- Group-level segment patterns.
+- Human-created segment labels.
+- Rule-based recommendations.
+- AI-generated explanations.",796,102
+recommendation_rules_001_3e8beb5e6dc3,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Purpose,1,1,"This document explains the transparent business rules used by the Banking Customer Segmentation and Product Recommendation Platform.
+
+The recommendation engine is implemented in `src/recommendations/generate_recommendations.py`. The current recommendation version is `rules_v1`.
+
+The engine generates product suggestions from historical account behavior, customer-segment assignments, account balances, cash flow, activity, and existing product ownership.
+
+The recommendations are not predictions of customer behavior. They are not product approvals, eligibility decisions, credit decisions, pricing decisions, or adverse-action decisions.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Purpose
+
+This document explains the transparent business rules used by the Banking Customer Segmentation and Product Recommendation Platform.
+
+The recommendation engine is implemented in `src/recommendations/generate_recommendations.py`. The current recommendation version is `rules_v1`.
+
+The engine generates product suggestions from historical account behavior, customer-segment assignments, account balances, cash flow, activity, and existing product ownership.
+
+The recommendations are not predictions of customer behavior. They are not product approvals, eligibility decisions, credit decisions, pricing decisions, or adverse-action decisions.",639,72
+recommendation_rules_002_5d4664b0d7cf,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Recommendation Inputs,2,1,"The recommendation engine uses the following customer-level fields:
+
+| Field | Meaning |
+|---|---|
+| `customer_id` | Anonymized customer identifier |
+| `account_id` | Account associated with the customer |
+| `cluster_id` | Numeric K-Means cluster identifier |
+| `segment_name` | Business-friendly customer segment |
+| `days_since_last_transaction` | Number of days since the customer's latest transaction |
+| `average_monthly_transaction_count` | Transaction count divided by active-month count |
+| `average_monthly_transaction_volume` | Total transaction volume divided by active-month count |
+| `net_cash_flow` | Total credits minus total debits |
+| `average_balance` | Average historical account balance |
+| `latest_balance` | Most recently observed account balance |
+| `negative_balance_percentage` | Percentage of transactions associated with a negative balance |
+| `has_card` | Whether the customer currently has a payment card |
+| `has_loan` | Whether the customer currently has a loan |
+| `payment_order_count` | Number of scheduled payment orders |
+| `banking_product_count` | Number of banking products associated with the customer |
+| `snapshot_date` | Date represented by the Customer 360 snapshot |","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Recommendation Inputs
+
+The recommendation engine uses the following customer-level fields:
+
+| Field | Meaning |
+|---|---|
+| `customer_id` | Anonymized customer identifier |
+| `account_id` | Account associated with the customer |
+| `cluster_id` | Numeric K-Means cluster identifier |
+| `segment_name` | Business-friendly customer segment |
+| `days_since_last_transaction` | Number of days since the customer's latest transaction |
+| `average_monthly_transaction_count` | Transaction count divided by active-month count |
+| `average_monthly_transaction_volume` | Total transaction volume divided by active-month count |
+| `net_cash_flow` | Total credits minus total debits |
+| `average_balance` | Average historical account balance |
+| `latest_balance` | Most recently observed account balance |
+| `negative_balance_percentage` | Percentage of transactions associated with a negative balance |
+| `has_card` | Whether the customer currently has a payment card |
+| `has_loan` | Whether the customer currently has a loan |
+| `payment_order_count` | Number of scheduled payment orders |
+| `banking_product_count` | Number of banking products associated with the customer |
+| `snapshot_date` | Date represented by the Customer 360 snapshot |",1211,171
+recommendation_rules_003_7a19fc7f3a61,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > General Recommendation Process,3,1,"For every customer, the engine:
+
+1. Evaluates all six product rules.
+2. Creates every recommendation for which the customer satisfies the required conditions.
+3. Calculates a recommendation score for each eligible product.
+4. Sorts recommendations from highest score to lowest score.
+5. Keeps a maximum of three recommendations per customer.
+6. Assigns ranks starting with rank 1.
+7. Stores the recommendation version and snapshot date.
+8. Validates coverage, uniqueness, scores, and ranks.
+9. Saves the results to a CSV file and PostgreSQL.
+
+A higher recommendation score indicates that more of the rule's supporting conditions were satisfied. It is not a probability that the customer will purchase or qualify for the product.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > General Recommendation Process
+
+For every customer, the engine:
+
+1. Evaluates all six product rules.
+2. Creates every recommendation for which the customer satisfies the required conditions.
+3. Calculates a recommendation score for each eligible product.
+4. Sorts recommendations from highest score to lowest score.
+5. Keeps a maximum of three recommendations per customer.
+6. Assigns ranks starting with rank 1.
+7. Stores the recommendation version and snapshot date.
+8. Validates coverage, uniqueness, scores, and ranks.
+9. Saves the results to a CSV file and PostgreSQL.
+
+A higher recommendation score indicates that more of the rule's supporting conditions were satisfied. It is not a probability that the customer will purchase or qualify for the product.",728,111
+recommendation_rules_004_d3924b5a22b7,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Payment Card > Required Condition,4,1,"A Payment Card recommendation is generated only when the customer does not currently have a card:
+
+```python
+not bool(customer[""has_card""])
+```","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Payment Card > Required Condition
+
+A Payment Card recommendation is generated only when the customer does not currently have a card:
+
+```python
+not bool(customer[""has_card""])
+```",143,20
+recommendation_rules_005_a4ffeb226252,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Payment Card > Score Calculation,5,1,"The starting score is 70.
+
+Add 10 points when:
+
+```text
+average_monthly_transaction_count >= 5
+```
+
+Add another 10 points when:
+
+```text
+segment_name == ""High-Value Multi-Product""
+```
+
+Possible scores are 70, 80, or 90.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Payment Card > Score Calculation
+
+The starting score is 70.
+
+Add 10 points when:
+
+```text
+average_monthly_transaction_count >= 5
+```
+
+Add another 10 points when:
+
+```text
+segment_name == ""High-Value Multi-Product""
+```
+
+Possible scores are 70, 80, or 90.",219,32
+recommendation_rules_006_2f4668bf8bb4,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Payment Card > Recommendation Reason,6,1,The customer does not currently have a card and shows transaction activity that may benefit from card-based payments.,"Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Payment Card > Recommendation Reason
+
+The customer does not currently have a card and shows transaction activity that may benefit from card-based payments.",117,18
+recommendation_rules_007_cdc12d0ab8cc,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Payment Card > Interpretation,7,1,This recommendation identifies an opportunity to discuss card-based payments with a customer who does not currently have a card. It does not determine card eligibility or guarantee that a card will be issued.,"Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Payment Card > Interpretation
+
+This recommendation identifies an opportunity to discuss card-based payments with a customer who does not currently have a card. It does not determine card eligibility or guarantee that a card will be issued.",208,33
+recommendation_rules_008_aadc47cd3c17,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Personal Loan Consultation > Required Conditions,8,1,"A Personal Loan Consultation recommendation is generated only when all the following conditions are true:
+
+```text
+has_loan == False
+days_since_last_transaction <= 30
+net_cash_flow > 0
+negative_balance_percentage <= 1
+```
+
+This means:
+
+- The customer does not currently have a loan.
+- The customer has transacted within the last 30 days.
+- The customer has positive net cash flow.
+- The customer's negative-balance activity is no more than 1 percent.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Personal Loan Consultation > Required Conditions
+
+A Personal Loan Consultation recommendation is generated only when all the following conditions are true:
+
+```text
+has_loan == False
+days_since_last_transaction <= 30
+net_cash_flow > 0
+negative_balance_percentage <= 1
+```
+
+This means:
+
+- The customer does not currently have a loan.
+- The customer has transacted within the last 30 days.
+- The customer has positive net cash flow.
+- The customer's negative-balance activity is no more than 1 percent.",450,69
+recommendation_rules_009_d88b816f74b9,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Personal Loan Consultation > Score Calculation,9,1,"The starting score is 60.
+
+Add 10 points when:
+
+```text
+average_balance >= 30000
+```
+
+Add another 10 points when:
+
+```text
+segment_name == ""High-Value Multi-Product""
+```
+
+Possible scores are 60, 70, or 80.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Personal Loan Consultation > Score Calculation
+
+The starting score is 60.
+
+Add 10 points when:
+
+```text
+average_balance >= 30000
+```
+
+Add another 10 points when:
+
+```text
+segment_name == ""High-Value Multi-Product""
+```
+
+Possible scores are 60, 70, or 80.",205,32
+recommendation_rules_010_1456825a0416,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Personal Loan Consultation > Recommendation Reason,10,1,"The customer is active, has positive net cash flow, and does not currently have a loan. The recommendation is an invitation for review and not an approval decision.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Personal Loan Consultation > Recommendation Reason
+
+The customer is active, has positive net cash flow, and does not currently have a loan. The recommendation is an invitation for review and not an approval decision.",164,28
+recommendation_rules_011_7b357b4a058c,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Personal Loan Consultation > Interpretation,11,1,"This recommendation means that a customer may be suitable for an optional conversation about loan products.
+
+It must never be described as:
+
+- A loan approval.
+- A guarantee of eligibility.
+- A creditworthiness assessment.
+- A pricing decision.
+- A replacement for formal underwriting.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Personal Loan Consultation > Interpretation
+
+This recommendation means that a customer may be suitable for an optional conversation about loan products.
+
+It must never be described as:
+
+- A loan approval.
+- A guarantee of eligibility.
+- A creditworthiness assessment.
+- A pricing decision.
+- A replacement for formal underwriting.",285,45
+recommendation_rules_012_67c7b26f2c77,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Savings Account > Required Conditions,12,1,"A Savings Account recommendation is generated when both conditions are true:
+
+```text
+net_cash_flow > 0
+latest_balance > 0
+```","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Savings Account > Required Conditions
+
+A Savings Account recommendation is generated when both conditions are true:
+
+```text
+net_cash_flow > 0
+latest_balance > 0
+```",126,19
+recommendation_rules_013_645daa41b123,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Savings Account > Score Calculation,13,1,"The starting score is 55.
+
+Add 15 points when:
+
+```text
+average_balance >= 30000
+```
+
+Add 10 points when:
+
+```text
+net_cash_flow >= 50000
+```
+
+Possible scores are 55, 65, 70, or 80.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Savings Account > Score Calculation
+
+The starting score is 55.
+
+Add 15 points when:
+
+```text
+average_balance >= 30000
+```
+
+Add 10 points when:
+
+```text
+net_cash_flow >= 50000
+```
+
+Possible scores are 55, 65, 70, or 80.",181,31
+recommendation_rules_014_08799f446d73,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Savings Account > Recommendation Reason,14,1,Positive cash flow and account balances indicate an opportunity to move available funds into savings.,"Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Savings Account > Recommendation Reason
+
+Positive cash flow and account balances indicate an opportunity to move available funds into savings.",101,15
+recommendation_rules_015_59080fee6b0a,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Savings Account > Interpretation,15,1,This recommendation identifies a potential savings opportunity from positive historical cash flow and balances. The rule does not determine how much a customer should save and does not provide financial advice.,"Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Savings Account > Interpretation
+
+This recommendation identifies a potential savings opportunity from positive historical cash flow and balances. The rule does not determine how much a customer should save and does not provide financial advice.",210,31
+recommendation_rules_016_33f44ab37785,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Overdraft Protection > Required Condition,16,1,"An Overdraft Protection recommendation is generated when:
+
+```text
+negative_balance_percentage > 0
+```","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Overdraft Protection > Required Condition
+
+An Overdraft Protection recommendation is generated when:
+
+```text
+negative_balance_percentage > 0
+```",102,12
+recommendation_rules_017_03c937c090dc,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Overdraft Protection > Score Calculation,17,1,"The score is calculated as:
+
+```python
+min(
+    95,
+    70 + int(negative_balance_percentage * 5),
+)
+```
+
+The score starts from a base of 70, increases as negative-balance activity increases, and is capped at 95.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Overdraft Protection > Score Calculation
+
+The score is calculated as:
+
+```python
+min(
+    95,
+    70 + int(negative_balance_percentage * 5),
+)
+```
+
+The score starts from a base of 70, increases as negative-balance activity increases, and is capped at 95.",212,33
+recommendation_rules_018_0c6b4b69bad5,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Overdraft Protection > Recommendation Reason,18,1,Negative-balance activity indicates that balance protection and account alerts may be useful.,"Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Overdraft Protection > Recommendation Reason
+
+Negative-balance activity indicates that balance protection and account alerts may be useful.",93,12
+recommendation_rules_019_a8356fc7a300,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Overdraft Protection > Interpretation,19,1,"This recommendation identifies a possible need for balance-management services or account alerts.
+
+Negative-balance activity must not automatically be interpreted as:
+
+- Financial distress.
+- Credit risk.
+- Fraud.
+- Inability to repay debt.
+- Product eligibility.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Overdraft Protection > Interpretation
+
+This recommendation identifies a possible need for balance-management services or account alerts.
+
+Negative-balance activity must not automatically be interpreted as:
+
+- Financial distress.
+- Credit risk.
+- Fraud.
+- Inability to repay debt.
+- Product eligibility.",263,36
+recommendation_rules_020_86df7a67fa8a,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Automatic Payment Setup > Required Conditions,20,1,"An Automatic Payment Setup recommendation is generated when both conditions are true:
+
+```text
+payment_order_count == 0
+days_since_last_transaction <= 30
+```","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Automatic Payment Setup > Required Conditions
+
+An Automatic Payment Setup recommendation is generated when both conditions are true:
+
+```text
+payment_order_count == 0
+days_since_last_transaction <= 30
+```",157,20
+recommendation_rules_021_b1a11d28e4ed,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Automatic Payment Setup > Score Calculation,21,1,The recommendation uses a fixed score of 55.,"Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Automatic Payment Setup > Score Calculation
+
+The recommendation uses a fixed score of 55.",44,8
+recommendation_rules_022_3661ada023cd,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Automatic Payment Setup > Recommendation Reason,22,1,"The customer is active but has no scheduled payment orders, so automatic payments may add convenience.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Automatic Payment Setup > Recommendation Reason
+
+The customer is active but has no scheduled payment orders, so automatic payments may add convenience.",102,16
+recommendation_rules_023_bec0b442e310,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Automatic Payment Setup > Interpretation,23,1,This recommendation identifies an opportunity to explain scheduled or automatic payment services to an active customer who does not currently use them.,"Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Automatic Payment Setup > Interpretation
+
+This recommendation identifies an opportunity to explain scheduled or automatic payment services to an active customer who does not currently use them.",151,22
+recommendation_rules_024_b326fcebb4e5,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Account Re-Engagement Review > Required Condition,24,1,"An Account Re-Engagement Review recommendation is generated when:
+
+```text
+days_since_last_transaction > 30
+```","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Account Re-Engagement Review > Required Condition
+
+An Account Re-Engagement Review recommendation is generated when:
+
+```text
+days_since_last_transaction > 30
+```",111,13
+recommendation_rules_025_9093570ce653,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Account Re-Engagement Review > Score Calculation,25,1,"The score is calculated as:
+
+```python
+min(
+    95,
+    70 + int(days_since_last_transaction / 10),
+)
+```
+
+The score starts from a base of 70, increases with the number of inactive days, and is capped at 95.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Account Re-Engagement Review > Score Calculation
+
+The score is calculated as:
+
+```python
+min(
+    95,
+    70 + int(days_since_last_transaction / 10),
+)
+```
+
+The score starts from a base of 70, increases with the number of inactive days, and is capped at 95.",207,35
+recommendation_rules_026_7c05d00644ff,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Account Re-Engagement Review > Recommendation Reason,26,1,The account has had an extended period without transactions and may benefit from a service review.,"Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Account Re-Engagement Review > Recommendation Reason
+
+The account has had an extended period without transactions and may benefit from a service review.",98,16
+recommendation_rules_027_aec4d2f9b434,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Account Re-Engagement Review > Interpretation,27,1,"This recommendation identifies an opportunity for an account review or appropriate re-engagement communication. The rule does not establish why the customer is inactive. It must not claim that the customer is dissatisfied, experiencing financial difficulty, or planning to close the account.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Account Re-Engagement Review > Interpretation
+
+This recommendation identifies an opportunity for an account review or appropriate re-engagement communication. The rule does not establish why the customer is inactive. It must not claim that the customer is dissatisfied, experiencing financial difficulty, or planning to close the account.",291,41
+recommendation_rules_028_c6edfe69ecaf,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Ranking Logic,28,1,"A customer may satisfy more than three product rules. The engine sorts all eligible recommendations by recommendation score in descending order:
+
+```python
+customer_recommendations.sort(
+    key=lambda item: item[""recommendation_score""],
+    reverse=True,
+)
+```
+
+It then keeps only the first three recommendations:
+
+```python
+customer_recommendations[:3]
+```
+
+Ranks are assigned as:
+
+```text
+Rank 1 = highest-scoring retained recommendation
+Rank 2 = second-highest retained recommendation
+Rank 3 = third-highest retained recommendation
+```
+
+When two recommendations have the same score, Python's stable sorting preserves the order in which the rules were evaluated.
+
+The rule-evaluation order is:
+
+1. Payment Card.
+2. Personal Loan Consultation.
+3. Savings Account.
+4. Overdraft Protection.
+5. Automatic Payment Setup.
+6. Account Re-Engagement Review.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Ranking Logic
+
+A customer may satisfy more than three product rules. The engine sorts all eligible recommendations by recommendation score in descending order:
+
+```python
+customer_recommendations.sort(
+    key=lambda item: item[""recommendation_score""],
+    reverse=True,
+)
+```
+
+It then keeps only the first three recommendations:
+
+```python
+customer_recommendations[:3]
+```
+
+Ranks are assigned as:
+
+```text
+Rank 1 = highest-scoring retained recommendation
+Rank 2 = second-highest retained recommendation
+Rank 3 = third-highest retained recommendation
+```
+
+When two recommendations have the same score, Python's stable sorting preserves the order in which the rules were evaluated.
+
+The rule-evaluation order is:
+
+1. Payment Card.
+2. Personal Loan Consultation.
+3. Savings Account.
+4. Overdraft Protection.
+5. Automatic Payment Setup.
+6. Account Re-Engagement Review.",851,108
+recommendation_rules_029_d268be08de5a,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Current Recommendation Output,29,1,"The current validated output contains:
+
+```text
+12,175 recommendations
+4,500 customers with recommendations
+6 product types
+Maximum of 3 recommendations per customer
+```
+
+Current recommendation counts by product are:
+
+| Recommended Product | Recommendation Count |
+|---|---:|
+| Savings Account | 4,452 |
+| Payment Card | 3,607 |
+| Personal Loan Consultation | 3,566 |
+| Overdraft Protection | 287 |
+| Automatic Payment Setup | 188 |
+| Account Re-Engagement Review | 75 |
+
+These counts represent the current dataset and recommendation version. They may change when source data, customer features, segments, or business rules change.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Current Recommendation Output
+
+The current validated output contains:
+
+```text
+12,175 recommendations
+4,500 customers with recommendations
+6 product types
+Maximum of 3 recommendations per customer
+```
+
+Current recommendation counts by product are:
+
+| Recommended Product | Recommendation Count |
+|---|---:|
+| Savings Account | 4,452 |
+| Payment Card | 3,607 |
+| Personal Loan Consultation | 3,566 |
+| Overdraft Protection | 287 |
+| Automatic Payment Setup | 188 |
+| Account Re-Engagement Review | 75 |
+
+These counts represent the current dataset and recommendation version. They may change when source data, customer features, segments, or business rules change.",631,97
+recommendation_rules_030_1a92d770b056,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Validation Rules,30,1,"Before the results are saved, the pipeline validates:
+
+- Every input customer has at least one retained recommendation.
+- No duplicate customer-product combinations exist.
+- Recommendation scores are between 0 and 100.
+- Recommendation ranks are between 1 and 3.
+- No customer has more than three recommendations.
+
+The current validated output has:
+
+```text
+Customers without recommendations: 0
+Duplicate customer-product pairs: 0
+Invalid scores: 0
+Invalid ranks: 0
+Customers with more than 3 recommendations: 0
+```","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Validation Rules
+
+Before the results are saved, the pipeline validates:
+
+- Every input customer has at least one retained recommendation.
+- No duplicate customer-product combinations exist.
+- Recommendation scores are between 0 and 100.
+- Recommendation ranks are between 1 and 3.
+- No customer has more than three recommendations.
+
+The current validated output has:
+
+```text
+Customers without recommendations: 0
+Duplicate customer-product pairs: 0
+Invalid scores: 0
+Invalid ranks: 0
+Customers with more than 3 recommendations: 0
+```",515,76
+recommendation_rules_031_3bf55744e47a,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Output Locations,31,1,"The validated recommendations are saved to:
+
+```text
+data/processed/recommendations/customer_product_recommendations.csv
+```
+
+They are also written to:
+
+```text
+ml.product_recommendations
+```
+
+The analytics-ready dbt model is:
+
+```text
+analytics.mart_product_recommendations
+```","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Output Locations
+
+The validated recommendations are saved to:
+
+```text
+data/processed/recommendations/customer_product_recommendations.csv
+```
+
+They are also written to:
+
+```text
+ml.product_recommendations
+```
+
+The analytics-ready dbt model is:
+
+```text
+analytics.mart_product_recommendations
+```",278,25
+recommendation_rules_032_c2d61cf0aef3,recommendation_rules.md,Product Recommendation Rules,Product Recommendation Rules > Responsible Use,32,1,"The recommendation engine is intended for:
+
+- Portfolio demonstrations.
+- Product-opportunity analysis.
+- Explainable marketing-rule demonstrations.
+- Customer-service discussion support.
+- Educational and portfolio purposes.
+
+It must not be used for:
+
+- Automatic loan approval or rejection.
+- Credit-limit decisions.
+- Product eligibility decisions.
+- Interest-rate or pricing decisions.
+- Adverse actions.
+- Claims about financial health.
+- Predictions that a customer will purchase a product.
+- Replacing human review in high-impact financial decisions.
+
+The AI assistant must clearly identify recommendations as rule-based suggestions and must never describe a recommendation score as a purchase probability, approval probability, or credit score.","Document: Product Recommendation Rules
+Section: Product Recommendation Rules > Responsible Use
+
+The recommendation engine is intended for:
+
+- Portfolio demonstrations.
+- Product-opportunity analysis.
+- Explainable marketing-rule demonstrations.
+- Customer-service discussion support.
+- Educational and portfolio purposes.
+
+It must not be used for:
+
+- Automatic loan approval or rejection.
+- Credit-limit decisions.
+- Product eligibility decisions.
+- Interest-rate or pricing decisions.
+- Adverse actions.
+- Claims about financial health.
+- Predictions that a customer will purchase a product.
+- Replacing human review in high-impact financial decisions.
+
+The AI assistant must clearly identify recommendations as rule-based suggestions and must never describe a recommendation score as a purchase probability, approval probability, or credit score.",752,100
+responsible_use_001_31a420c6813e,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Purpose,1,1,"This document defines the responsible-use requirements for the Banking
+Customer Segmentation and Product Recommendation Platform and its planned
+RAG-powered Banking Analytics Assistant.
+
+The platform is an educational and portfolio demonstration built from an
+anonymized historical banking dataset.
+
+It is not a production banking system and must not be used to make
+real-world financial decisions.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Purpose
+
+This document defines the responsible-use requirements for the Banking
+Customer Segmentation and Product Recommendation Platform and its planned
+RAG-powered Banking Analytics Assistant.
+
+The platform is an educational and portfolio demonstration built from an
+anonymized historical banking dataset.
+
+It is not a production banking system and must not be used to make
+real-world financial decisions.",398,54
+responsible_use_002_4b91ef926c04,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > System Scope,2,1,"The platform includes:
+
+- Historical banking-data ingestion.
+- PostgreSQL data storage.
+- dbt transformations.
+- Customer 360 analytics.
+- K-Means customer segmentation.
+- Rule-based product recommendations.
+- Streamlit dashboards.
+- A planned RAG-powered analytics assistant.
+
+The AI assistant is designed to explain verified project information. It
+is not designed to make decisions about customers.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > System Scope
+
+The platform includes:
+
+- Historical banking-data ingestion.
+- PostgreSQL data storage.
+- dbt transformations.
+- Customer 360 analytics.
+- K-Means customer segmentation.
+- Rule-based product recommendations.
+- Streamlit dashboards.
+- A planned RAG-powered analytics assistant.
+
+The AI assistant is designed to explain verified project information. It
+is not designed to make decisions about customers.",401,54
+responsible_use_003_fadc5ceb6138,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Allowed Uses,3,1,"The platform and AI assistant may be used for:
+
+- Explaining the data pipeline.
+- Explaining Customer 360 fields.
+- Describing customer segments.
+- Comparing aggregated segment behavior.
+- Explaining K-Means preprocessing.
+- Reporting documented model-evaluation metrics.
+- Explaining rule-based product recommendations.
+- Displaying anonymized historical customer information.
+- Answering questions about project architecture.
+- Demonstrating RAG retrieval.
+- Demonstrating grounded LLM responses.
+- Educational and portfolio demonstrations.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Allowed Uses
+
+The platform and AI assistant may be used for:
+
+- Explaining the data pipeline.
+- Explaining Customer 360 fields.
+- Describing customer segments.
+- Comparing aggregated segment behavior.
+- Explaining K-Means preprocessing.
+- Reporting documented model-evaluation metrics.
+- Explaining rule-based product recommendations.
+- Displaying anonymized historical customer information.
+- Answering questions about project architecture.
+- Demonstrating RAG retrieval.
+- Demonstrating grounded LLM responses.
+- Educational and portfolio demonstrations.",542,68
+responsible_use_004_cda9a0857ade,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Prohibited Uses,4,1,"The platform and AI assistant must not be used for:
+
+- Loan approval or rejection.
+- Credit-limit decisions.
+- Credit scoring.
+- Product eligibility decisions.
+- Interest-rate decisions.
+- Product-pricing decisions.
+- Insurance decisions.
+- Adverse actions.
+- Fraud accusations.
+- Predictions of loan default.
+- Predictions that a customer will purchase a product.
+- Predictions presented as facts about an individual.
+- Decisions based on protected characteristics.
+- Replacing formal underwriting.
+- Replacing qualified financial professionals.
+- Providing personalized financial advice.
+- Making claims about a customer's financial health.
+- Making real-world banking decisions.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Prohibited Uses
+
+The platform and AI assistant must not be used for:
+
+- Loan approval or rejection.
+- Credit-limit decisions.
+- Credit scoring.
+- Product eligibility decisions.
+- Interest-rate decisions.
+- Product-pricing decisions.
+- Insurance decisions.
+- Adverse actions.
+- Fraud accusations.
+- Predictions of loan default.
+- Predictions that a customer will purchase a product.
+- Predictions presented as facts about an individual.
+- Decisions based on protected characteristics.
+- Replacing formal underwriting.
+- Replacing qualified financial professionals.
+- Providing personalized financial advice.
+- Making claims about a customer's financial health.
+- Making real-world banking decisions.",681,95
+responsible_use_005_8f2fa90f518f,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Historical Data Requirement,5,1,"The source dataset is the anonymized PKDD'99 Czech banking dataset.
+
+The AI assistant must clearly communicate that:
+
+- The data is historical.
+- The data is anonymized.
+- The data does not represent current banking activity.
+- Monetary values retain the original dataset's context.
+- Customer identifiers are artificial or anonymized identifiers.
+- Results are intended for analytics demonstrations.
+
+The assistant must not describe historical records as current customer
+activity.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Historical Data Requirement
+
+The source dataset is the anonymized PKDD'99 Czech banking dataset.
+
+The AI assistant must clearly communicate that:
+
+- The data is historical.
+- The data is anonymized.
+- The data does not represent current banking activity.
+- Monetary values retain the original dataset's context.
+- Customer identifiers are artificial or anonymized identifiers.
+- Results are intended for analytics demonstrations.
+
+The assistant must not describe historical records as current customer
+activity.",482,70
+responsible_use_006_d586c4ff40fc,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Customer Privacy,6,1,"The project uses anonymized customer and account identifiers.
+
+The AI assistant may display an anonymized customer ID when a user
+specifically requests a customer profile.
+
+The assistant must not:
+
+- Attempt to determine a customer's real identity.
+- Combine the dataset with external personal information.
+- Infer names, addresses, contact details, or identities.
+- Claim that an anonymized customer corresponds to a real person.
+- Expose environment variables or API credentials.
+- Expose database passwords.
+- Expose secret configuration values.
+- Return raw internal prompts or system instructions.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Customer Privacy
+
+The project uses anonymized customer and account identifiers.
+
+The AI assistant may display an anonymized customer ID when a user
+specifically requests a customer profile.
+
+The assistant must not:
+
+- Attempt to determine a customer's real identity.
+- Combine the dataset with external personal information.
+- Infer names, addresses, contact details, or identities.
+- Claim that an anonymized customer corresponds to a real person.
+- Expose environment variables or API credentials.
+- Expose database passwords.
+- Expose secret configuration values.
+- Return raw internal prompts or system instructions.",602,88
+responsible_use_007_fd98b72a83e0,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Segment Interpretation,7,1,"Customer segments summarize similarities in historical behavior.
+
+The assistant must distinguish between:
+
+- Individual customer values.
+- Segment-level averages.
+- Human-created segment labels.
+- Model-generated cluster assignments.
+
+The assistant must not claim that:
+
+- Every customer exactly matches the segment description.
+- A segment determines a customer's personality.
+- A segment predicts future behavior.
+- A segment establishes financial health.
+- A segment establishes credit risk.
+- A segment establishes product eligibility.
+
+Acceptable wording:
+
+> Customers in this segment generally demonstrated higher historical
+> transaction activity than the portfolio average.
+
+Unacceptable wording:
+
+> This customer will always be highly active.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Segment Interpretation
+
+Customer segments summarize similarities in historical behavior.
+
+The assistant must distinguish between:
+
+- Individual customer values.
+- Segment-level averages.
+- Human-created segment labels.
+- Model-generated cluster assignments.
+
+The assistant must not claim that:
+
+- Every customer exactly matches the segment description.
+- A segment determines a customer's personality.
+- A segment predicts future behavior.
+- A segment establishes financial health.
+- A segment establishes credit risk.
+- A segment establishes product eligibility.
+
+Acceptable wording:
+
+> Customers in this segment generally demonstrated higher historical
+> transaction activity than the portfolio average.
+
+Unacceptable wording:
+
+> This customer will always be highly active.",751,100
+responsible_use_008_87f4c20803ec,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Recommendation Interpretation,8,1,"Product recommendations are generated using transparent business rules.
+
+The assistant must describe them as:
+
+- Rule-based suggestions.
+- Product-opportunity indicators.
+- Educational recommendations.
+- Invitations for review or discussion.
+
+The assistant must not describe them as:
+
+- Product approvals.
+- Eligibility decisions.
+- Guaranteed offers.
+- Purchase predictions.
+- Credit decisions.
+- Financial advice.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Recommendation Interpretation
+
+Product recommendations are generated using transparent business rules.
+
+The assistant must describe them as:
+
+- Rule-based suggestions.
+- Product-opportunity indicators.
+- Educational recommendations.
+- Invitations for review or discussion.
+
+The assistant must not describe them as:
+
+- Product approvals.
+- Eligibility decisions.
+- Guaranteed offers.
+- Purchase predictions.
+- Credit decisions.
+- Financial advice.",415,54
+responsible_use_009_fdb107b83dba,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Recommendation Scores,9,1,"A recommendation score is used to rank eligible product suggestions.
+
+The score is not:
+
+- A purchase probability.
+- An approval probability.
+- A credit score.
+- A default-risk score.
+- A customer-value score.
+- A confidence percentage.
+
+Acceptable wording:
+
+> The product received a rule-based score of 80 and was ranked first among
+> the customer's eligible recommendations.
+
+Unacceptable wording:
+
+> The customer has an 80 percent probability of purchasing the product.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Recommendation Scores
+
+A recommendation score is used to rank eligible product suggestions.
+
+The score is not:
+
+- A purchase probability.
+- An approval probability.
+- A credit score.
+- A default-risk score.
+- A customer-value score.
+- A confidence percentage.
+
+Acceptable wording:
+
+> The product received a rule-based score of 80 and was ranked first among
+> the customer's eligible recommendations.
+
+Unacceptable wording:
+
+> The customer has an 80 percent probability of purchasing the product.",472,73
+responsible_use_010_f34a3af067e3,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Personal Loan Consultation,10,1,"The `Personal Loan Consultation` recommendation is only an invitation for
+a possible product discussion.
+
+The assistant must never shorten its meaning to automatic loan approval.
+
+Acceptable wording:
+
+> The customer met the documented conditions for a loan consultation,
+> including recent activity and positive historical net cash flow. This is
+> not an approval decision.
+
+Unacceptable wording:
+
+> The customer qualifies for a loan.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Personal Loan Consultation
+
+The `Personal Loan Consultation` recommendation is only an invitation for
+a possible product discussion.
+
+The assistant must never shorten its meaning to automatic loan approval.
+
+Acceptable wording:
+
+> The customer met the documented conditions for a loan consultation,
+> including recent activity and positive historical net cash flow. This is
+> not an approval decision.
+
+Unacceptable wording:
+
+> The customer qualifies for a loan.",434,64
+responsible_use_011_f43ad9f66fe9,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Negative-Balance Activity,11,1,"Negative-balance activity is a historical behavioral feature.
+
+The assistant must not automatically interpret it as:
+
+- Financial distress.
+- Inability to repay debt.
+- Credit risk.
+- Fraud.
+- Financial irresponsibility.
+- Loan ineligibility.
+
+Acceptable wording:
+
+> Historical negative-balance activity triggered an Overdraft Protection
+> recommendation under the documented rule.
+
+Unacceptable wording:
+
+> The customer is financially unstable and cannot manage money.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Negative-Balance Activity
+
+Negative-balance activity is a historical behavioral feature.
+
+The assistant must not automatically interpret it as:
+
+- Financial distress.
+- Inability to repay debt.
+- Credit risk.
+- Fraud.
+- Financial irresponsibility.
+- Loan ineligibility.
+
+Acceptable wording:
+
+> Historical negative-balance activity triggered an Overdraft Protection
+> recommendation under the documented rule.
+
+Unacceptable wording:
+
+> The customer is financially unstable and cannot manage money.",469,62
+responsible_use_012_a21126a17355,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Inactive Customer Behavior,12,1,"A large value for `days_since_last_transaction` indicates limited recent
+activity in the historical dataset.
+
+The assistant must not assume why a customer is inactive.
+
+It must not claim that the customer:
+
+- Is dissatisfied.
+- Has left the bank.
+- Is experiencing financial difficulty.
+- Intends to close the account.
+- Has died or relocated.
+
+Acceptable wording:
+
+> More than 30 days passed since the latest recorded transaction, which
+> triggered an Account Re-Engagement Review.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Inactive Customer Behavior
+
+A large value for `days_since_last_transaction` indicates limited recent
+activity in the historical dataset.
+
+The assistant must not assume why a customer is inactive.
+
+It must not claim that the customer:
+
+- Is dissatisfied.
+- Has left the bank.
+- Is experiencing financial difficulty.
+- Intends to close the account.
+- Has died or relocated.
+
+Acceptable wording:
+
+> More than 30 days passed since the latest recorded transaction, which
+> triggered an Account Re-Engagement Review.",482,74
+responsible_use_013_46b80093b516,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Geographic and Demographic Data,13,1,"District and demographic fields are intended for descriptive analytics.
+
+The assistant must not use fields such as:
+
+- Gender.
+- Age.
+- District.
+- Region.
+- District salary.
+- Unemployment rate.
+- Crime count.
+
+to make or recommend:
+
+- Credit decisions.
+- Product eligibility decisions.
+- Pricing decisions.
+- Adverse actions.
+- Fraud assessments.
+
+District-level values describe geographic areas and are not facts about an
+individual customer.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Geographic and Demographic Data
+
+District and demographic fields are intended for descriptive analytics.
+
+The assistant must not use fields such as:
+
+- Gender.
+- Age.
+- District.
+- Region.
+- District salary.
+- Unemployment rate.
+- Crime count.
+
+to make or recommend:
+
+- Credit decisions.
+- Product eligibility decisions.
+- Pricing decisions.
+- Adverse actions.
+- Fraud assessments.
+
+District-level values describe geographic areas and are not facts about an
+individual customer.",445,67
+responsible_use_014_d0ffc144c6f3,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Grounded-Answer Requirement,14,1,"The assistant must answer using only:
+
+- Retrieved knowledge-base documents.
+- Approved analytics-function results.
+- Validated dashboard datasets.
+- Documented model metrics.
+- Documented recommendation rules.
+
+The assistant must not invent:
+
+- Customer values.
+- Product ownership.
+- Recommendation scores.
+- Recommendation ranks.
+- Segment statistics.
+- Model metrics.
+- Business rules.
+- Pipeline components.
+- File locations.
+
+If sufficient evidence is unavailable, the assistant must say:
+
+> I do not have enough verified information in the available project data
+> and documentation to answer that question.","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Grounded-Answer Requirement
+
+The assistant must answer using only:
+
+- Retrieved knowledge-base documents.
+- Approved analytics-function results.
+- Validated dashboard datasets.
+- Documented model metrics.
+- Documented recommendation rules.
+
+The assistant must not invent:
+
+- Customer values.
+- Product ownership.
+- Recommendation scores.
+- Recommendation ranks.
+- Segment statistics.
+- Model metrics.
+- Business rules.
+- Pipeline components.
+- File locations.
+
+If sufficient evidence is unavailable, the assistant must say:
+
+> I do not have enough verified information in the available project data
+> and documentation to answer that question.",614,87
+responsible_use_015_7a94555a24dd,responsible_use.md,Responsible Use and AI Safety Policy,Responsible Use and AI Safety Policy > Source Citation Requirement,15,1,"Every RAG-generated answer must identify the information sources used.
+
+Examples include:
+
+```text
+Source: segment_profiles.md — Low-Engagement Dormant
+Source: recommendation_rules.md — Savings Account
+Source: model_card.md — Final Model Selection
+Source: Customer 360 record — Customer 16","Document: Responsible Use and AI Safety Policy
+Section: Responsible Use and AI Safety Policy > Source Citation Requirement
+
+Every RAG-generated answer must identify the information sources used.
+
+Examples include:
+
+```text
+Source: segment_profiles.md — Low-Engagement Dormant
+Source: recommendation_rules.md — Savings Account
+Source: model_card.md — Final Model Selection
+Source: Customer 360 record — Customer 16",289,35
+segment_profiles_001_a48768e0a3f4,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Purpose,1,1,"This document describes the five customer segments produced by the
+Banking Customer Segmentation and Product Recommendation Platform.
+
+The segments were created using K-Means clustering applied to behavioral,
+transactional, balance, cash-flow, and product-ownership features.
+
+These segments describe patterns found in the historical anonymized
+dataset. They do not predict an individual customer's future behavior and
+must not be used for credit approval, product eligibility, pricing, or
+adverse-action decisions.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Purpose
+
+This document describes the five customer segments produced by the
+Banking Customer Segmentation and Product Recommendation Platform.
+
+The segments were created using K-Means clustering applied to behavioral,
+transactional, balance, cash-flow, and product-ownership features.
+
+These segments describe patterns found in the historical anonymized
+dataset. They do not predict an individual customer's future behavior and
+must not be used for credit approval, product eligibility, pricing, or
+adverse-action decisions.",515,66
+segment_profiles_002_97b90dbbd87e,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Portfolio Summary,2,1,"The segmentation model assigned 4,500 customers to five segments.
+
+| Segment | Customers | Portfolio Share |
+|---|---:|---:|
+| High-Value Multi-Product | 1,464 | 32.53% |
+| Everyday Cash-Focused | 1,409 | 31.31% |
+| Mature Transfer-Focused | 1,188 | 26.40% |
+| High-Flow Financially Volatile | 260 | 5.78% |
+| Low-Engagement Dormant | 179 | 3.98% |
+
+The customer counts represent the current model output and may change if
+the model is retrained or the source data changes.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Portfolio Summary
+
+The segmentation model assigned 4,500 customers to five segments.
+
+| Segment | Customers | Portfolio Share |
+|---|---:|---:|
+| High-Value Multi-Product | 1,464 | 32.53% |
+| Everyday Cash-Focused | 1,409 | 31.31% |
+| Mature Transfer-Focused | 1,188 | 26.40% |
+| High-Flow Financially Volatile | 260 | 5.78% |
+| Low-Engagement Dormant | 179 | 3.98% |
+
+The customer counts represent the current model output and may change if
+the model is retrained or the source data changes.",473,80
+segment_profiles_003_8916c753f5de,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > High-Value Multi-Product > Description,3,1,"Customers in the High-Value Multi-Product segment demonstrate relatively
+strong account value, higher banking-product ownership, and broad
+engagement with the bank.
+
+These customers commonly use more than one banking service and represent
+an established and valuable portion of the customer portfolio.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > High-Value Multi-Product > Description
+
+Customers in the High-Value Multi-Product segment demonstrate relatively
+strong account value, higher banking-product ownership, and broad
+engagement with the bank.
+
+These customers commonly use more than one banking service and represent
+an established and valuable portion of the customer portfolio.",301,40
+segment_profiles_004_465f9550559d,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > High-Value Multi-Product > Common Characteristics,4,1,"- Relatively high average or latest account balances.
+- Broader ownership of banking products.
+- Stronger overall engagement with the bank.
+- Regular transaction activity.
+- Greater use of cards, loans, payment orders, or other services.
+- Longer or more established banking relationships.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > High-Value Multi-Product > Common Characteristics
+
+- Relatively high average or latest account balances.
+- Broader ownership of banking products.
+- Stronger overall engagement with the bank.
+- Regular transaction activity.
+- Greater use of cards, loans, payment orders, or other services.
+- Longer or more established banking relationships.",289,43
+segment_profiles_005_fe5d7d6973f7,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > High-Value Multi-Product > Business Interpretation,5,1,"This segment can be used to understand the behavior of highly engaged
+customers and identify opportunities for relationship development,
+retention, and relevant service education.
+
+The segment name does not mean that every customer is profitable or
+eligible for every banking product.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > High-Value Multi-Product > Business Interpretation
+
+This segment can be used to understand the behavior of highly engaged
+customers and identify opportunities for relationship development,
+retention, and relevant service education.
+
+The segment name does not mean that every customer is profitable or
+eligible for every banking product.",284,41
+segment_profiles_006_7189d7e12732,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > High-Value Multi-Product > Potential Recommendation Context,6,1,"Depending on existing product ownership and customer behavior, transparent
+rules may identify products such as:
+
+- Savings Account.
+- Payment Card.
+- Automatic Payment Setup.
+- Personal Loan Consultation.
+
+Recommendations are educational portfolio suggestions. They are not
+guaranteed offers or eligibility decisions.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > High-Value Multi-Product > Potential Recommendation Context
+
+Depending on existing product ownership and customer behavior, transparent
+rules may identify products such as:
+
+- Savings Account.
+- Payment Card.
+- Automatic Payment Setup.
+- Personal Loan Consultation.
+
+Recommendations are educational portfolio suggestions. They are not
+guaranteed offers or eligibility decisions.",317,42
+segment_profiles_007_68e434e38b15,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Everyday Cash-Focused > Description,7,1,"Customers in the Everyday Cash-Focused segment primarily demonstrate
+routine banking behavior involving cash deposits, cash withdrawals, and
+regular account usage.
+
+Their behavior reflects practical day-to-day banking rather than extensive
+use of multiple financial products.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Everyday Cash-Focused > Description
+
+Customers in the Everyday Cash-Focused segment primarily demonstrate
+routine banking behavior involving cash deposits, cash withdrawals, and
+regular account usage.
+
+Their behavior reflects practical day-to-day banking rather than extensive
+use of multiple financial products.",275,34
+segment_profiles_008_1440d63d5bc6,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Everyday Cash-Focused > Common Characteristics,8,1,"- Frequent cash-related activity.
+- Routine deposits and withdrawals.
+- Moderate transaction frequency.
+- Everyday account usage.
+- Lower product diversification than the High-Value Multi-Product segment.
+- Possible opportunity for card or automated-payment adoption.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Everyday Cash-Focused > Common Characteristics
+
+- Frequent cash-related activity.
+- Routine deposits and withdrawals.
+- Moderate transaction frequency.
+- Everyday account usage.
+- Lower product diversification than the High-Value Multi-Product segment.
+- Possible opportunity for card or automated-payment adoption.",267,34
+segment_profiles_009_920242f749dc,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Everyday Cash-Focused > Business Interpretation,9,1,"This segment helps identify customers who actively use their accounts but
+may rely heavily on cash-based transactions.
+
+The segment can support analysis of digital-payment adoption, payment-card
+usage, savings behavior, and routine banking needs.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Everyday Cash-Focused > Business Interpretation
+
+This segment helps identify customers who actively use their accounts but
+may rely heavily on cash-based transactions.
+
+The segment can support analysis of digital-payment adoption, payment-card
+usage, savings behavior, and routine banking needs.",246,33
+segment_profiles_010_9dc0b22f24ed,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Everyday Cash-Focused > Potential Recommendation Context,10,1,"Depending on current ownership and behavior, rule-based recommendations
+may include:
+
+- Payment Card.
+- Savings Account.
+- Automatic Payment Setup.
+
+A recommendation should include a clear reason based on observed behavior
+and should never be presented as a requirement.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Everyday Cash-Focused > Potential Recommendation Context
+
+Depending on current ownership and behavior, rule-based recommendations
+may include:
+
+- Payment Card.
+- Savings Account.
+- Automatic Payment Setup.
+
+A recommendation should include a clear reason based on observed behavior
+and should never be presented as a requirement.",270,39
+segment_profiles_011_181eda202326,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Mature Transfer-Focused > Description,11,1,"Customers in the Mature Transfer-Focused segment demonstrate established
+account relationships and relatively strong use of incoming or outgoing
+bank transfers.
+
+Their activity is more transfer-oriented than cash-oriented.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Mature Transfer-Focused > Description
+
+Customers in the Mature Transfer-Focused segment demonstrate established
+account relationships and relatively strong use of incoming or outgoing
+bank transfers.
+
+Their activity is more transfer-oriented than cash-oriented.",222,27
+segment_profiles_012_b80d7cc226c7,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Mature Transfer-Focused > Common Characteristics,12,1,"- Established account tenure.
+- Frequent incoming or outgoing transfers.
+- Regular movement of funds between accounts.
+- Moderate or strong transaction activity.
+- Use of payment orders or recurring transfers.
+- Stable and mature banking relationships.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Mature Transfer-Focused > Common Characteristics
+
+- Established account tenure.
+- Frequent incoming or outgoing transfers.
+- Regular movement of funds between accounts.
+- Moderate or strong transaction activity.
+- Use of payment orders or recurring transfers.
+- Stable and mature banking relationships.",252,37
+segment_profiles_013_fd0b5c4b18d0,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Mature Transfer-Focused > Business Interpretation,13,1,"This segment can support analysis of customers who rely on bank transfers,
+scheduled payments, or account-to-account movement.
+
+It may help identify opportunities to improve payment automation, savings
+management, or related account services.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Mature Transfer-Focused > Business Interpretation
+
+This segment can support analysis of customers who rely on bank transfers,
+scheduled payments, or account-to-account movement.
+
+It may help identify opportunities to improve payment automation, savings
+management, or related account services.",242,32
+segment_profiles_014_03c583f675ba,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Mature Transfer-Focused > Potential Recommendation Context,14,1,"Depending on existing services and customer behavior, recommendations may
+include:
+
+- Automatic Payment Setup.
+- Savings Account.
+- Payment Card.
+- Personal Loan Consultation.
+
+The recommendation engine should only suggest products supported by
+documented rules.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Mature Transfer-Focused > Potential Recommendation Context
+
+Depending on existing services and customer behavior, recommendations may
+include:
+
+- Automatic Payment Setup.
+- Savings Account.
+- Payment Card.
+- Personal Loan Consultation.
+
+The recommendation engine should only suggest products supported by
+documented rules.",262,35
+segment_profiles_015_54c5efef80cc,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > High-Flow Financially Volatile > Description,15,1,"Customers in the High-Flow Financially Volatile segment demonstrate high
+movement of money combined with greater balance variability or negative
+balance activity.
+
+High transaction volume does not necessarily mean that a customer has a
+high or stable account balance.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > High-Flow Financially Volatile > Description
+
+Customers in the High-Flow Financially Volatile segment demonstrate high
+movement of money combined with greater balance variability or negative
+balance activity.
+
+High transaction volume does not necessarily mean that a customer has a
+high or stable account balance.",267,38
+segment_profiles_016_f8d6566e5c07,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > High-Flow Financially Volatile > Common Characteristics,16,1,"- High total transaction volume.
+- Strong inflow and outflow of funds.
+- Greater balance fluctuation.
+- Possible negative-balance activity.
+- High financial movement relative to the segment size.
+- Potential need for cash-flow management support.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > High-Flow Financially Volatile > Common Characteristics
+
+- High total transaction volume.
+- Strong inflow and outflow of funds.
+- Greater balance fluctuation.
+- Possible negative-balance activity.
+- High financial movement relative to the segment size.
+- Potential need for cash-flow management support.",246,36
+segment_profiles_017_d8099a31aaeb,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > High-Flow Financially Volatile > Business Interpretation,17,1,"This segment is useful for understanding customers with substantial
+financial activity but less balance stability.
+
+The segment must not be interpreted as proof of financial distress,
+default risk, fraud, or credit risk. The clustering model was not designed
+to make those predictions.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > High-Flow Financially Volatile > Business Interpretation
+
+This segment is useful for understanding customers with substantial
+financial activity but less balance stability.
+
+The segment must not be interpreted as proof of financial distress,
+default risk, fraud, or credit risk. The clustering model was not designed
+to make those predictions.",285,42
+segment_profiles_018_720e56d94506,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > High-Flow Financially Volatile > Potential Recommendation Context,18,1,"Depending on documented rule conditions, recommendations may include:
+
+- Overdraft Protection.
+- Savings Account.
+- Automatic Payment Setup.
+- Personal Loan Consultation.
+
+Any consultation recommendation must remain informational and must not
+imply approval.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > High-Flow Financially Volatile > Potential Recommendation Context
+
+Depending on documented rule conditions, recommendations may include:
+
+- Overdraft Protection.
+- Savings Account.
+- Automatic Payment Setup.
+- Personal Loan Consultation.
+
+Any consultation recommendation must remain informational and must not
+imply approval.",258,33
+segment_profiles_019_6ffad33f1e34,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Low-Engagement Dormant > Description,19,1,"Customers in the Low-Engagement Dormant segment demonstrate limited recent
+activity, low transaction frequency, or a longer period since their most
+recent transaction.
+
+These customers may have reduced their account usage, but the dataset does
+not provide the reason for that behavior.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Low-Engagement Dormant > Description
+
+Customers in the Low-Engagement Dormant segment demonstrate limited recent
+activity, low transaction frequency, or a longer period since their most
+recent transaction.
+
+These customers may have reduced their account usage, but the dataset does
+not provide the reason for that behavior.",285,41
+segment_profiles_020_937457b6e0ee,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Low-Engagement Dormant > Common Characteristics,20,1,"- High number of days since the last transaction.
+- Low transaction frequency.
+- Lower transaction volume.
+- Limited product ownership.
+- Reduced recent account engagement.
+- Possible inactive or dormant account behavior.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Low-Engagement Dormant > Common Characteristics
+
+- High number of days since the last transaction.
+- Low transaction frequency.
+- Lower transaction volume.
+- Limited product ownership.
+- Reduced recent account engagement.
+- Possible inactive or dormant account behavior.",221,33
+segment_profiles_021_d87d78950900,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Low-Engagement Dormant > Business Interpretation,21,1,"This segment can support customer-engagement analysis and the development
+of appropriate re-engagement or account-review strategies.
+
+A customer may be inactive for many reasons. The segment should not assume
+dissatisfaction, financial difficulty, or intent to close the account.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Low-Engagement Dormant > Business Interpretation
+
+This segment can support customer-engagement analysis and the development
+of appropriate re-engagement or account-review strategies.
+
+A customer may be inactive for many reasons. The segment should not assume
+dissatisfaction, financial difficulty, or intent to close the account.",279,37
+segment_profiles_022_556c62da8bc9,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Low-Engagement Dormant > Potential Recommendation Context,22,1,"Depending on documented rules, recommendations may include:
+
+- Account Re-Engagement Review.
+- Payment Card.
+- Savings Account.
+- Automatic Payment Setup.
+
+Communication should be helpful and non-intrusive.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Low-Engagement Dormant > Potential Recommendation Context
+
+Depending on documented rules, recommendations may include:
+
+- Account Re-Engagement Review.
+- Payment Card.
+- Savings Account.
+- Automatic Payment Setup.
+
+Communication should be helpful and non-intrusive.",206,27
+segment_profiles_023_454ff827249d,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Segment Comparison Guidance,23,1,"The five segments should be compared using aggregated measures such as:
+
+- Customer count.
+- Portfolio percentage.
+- Average balance.
+- Latest balance.
+- Average transaction count.
+- Total transaction volume.
+- Days since the last transaction.
+- Card adoption rate.
+- Loan adoption rate.
+- Average banking-product count.
+- Cash, card, and transfer activity.
+
+Segment-level averages describe groups. They should not be treated as exact
+descriptions of every customer assigned to a segment.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Segment Comparison Guidance
+
+The five segments should be compared using aggregated measures such as:
+
+- Customer count.
+- Portfolio percentage.
+- Average balance.
+- Latest balance.
+- Average transaction count.
+- Total transaction volume.
+- Days since the last transaction.
+- Card adoption rate.
+- Loan adoption rate.
+- Average banking-product count.
+- Cash, card, and transfer activity.
+
+Segment-level averages describe groups. They should not be treated as exact
+descriptions of every customer assigned to a segment.",488,74
+segment_profiles_024_ad50935c4825,segment_profiles.md,Customer Segment Profiles,Customer Segment Profiles > Responsible Use,24,1,"The segmentation output is intended for:
+
+- Portfolio analysis.
+- Customer-behavior exploration.
+- Marketing-strategy demonstrations.
+- Product-recommendation demonstrations.
+- Educational and portfolio purposes.
+
+The segmentation output must not be used for:
+
+- Loan approval or rejection.
+- Credit-limit decisions.
+- Product eligibility decisions.
+- Pricing decisions.
+- Adverse actions.
+- Fraud accusations.
+- Claims about protected characteristics.
+- Predictions of individual customer behavior.
+
+Every AI-generated explanation must distinguish between observed historical
+patterns, segment-level summaries, and individual customer facts.","Document: Customer Segment Profiles
+Section: Customer Segment Profiles > Responsible Use
+
+The segmentation output is intended for:
+
+- Portfolio analysis.
+- Customer-behavior exploration.
+- Marketing-strategy demonstrations.
+- Product-recommendation demonstrations.
+- Educational and portfolio purposes.
+
+The segmentation output must not be used for:
+
+- Loan approval or rejection.
+- Credit-limit decisions.
+- Product eligibility decisions.
+- Pricing decisions.
+- Adverse actions.
+- Fraud accusations.
+- Claims about protected characteristics.
+- Predictions of individual customer behavior.
+
+Every AI-generated explanation must distinguish between observed historical
+patterns, segment-level summaries, and individual customer facts.",642,78

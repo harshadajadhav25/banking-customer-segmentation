@@ -1,0 +1,22 @@
+{
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "chunk_count": 215,
+  "batch_size": 32,
+  "normalized_embeddings": true,
+  "text_column": "searchable_text",
+  "sentence_transformers_version": null,
+  "generated_at_utc": "2026-11-07T10:53:36.578852+00:00",
+  "knowledge_chunks_file": "data\\rag\\knowledge_chunks.csv",
+  "knowledge_chunks_sha256": "ec1dd1790800371bfdbb3cb7b26bf891e95a55b0cb1b7f650bd3b9f6bbbbb393",
+  "embeddings_file": "data\\rag\\knowledge_embeddings.npy",
+  "embeddings_sha256": "0a68fd293e7852e5e5ef05e829fa3e86b4966679581ae87ae0c242a8f91a493f",
+  "source_documents": [
+    "data_dictionary.md",
+    "model_card.md",
+    "pipeline_architecture.md",
+    "recommendation_rules.md",
+    "responsible_use.md",
+    "segment_profiles.md"
+  ]
+}
