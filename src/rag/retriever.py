@@ -117,8 +117,24 @@ TERM_ALIASES = {
 }
 
 
-def calculate_file_sha256(file_path):
-    """Calculate the SHA-256 checksum for a file."""
+def calculate_file_sha256(
+    file_path,
+    normalize_newlines=False,
+):
+    """Calculate a cross-platform SHA-256 checksum."""
+
+    if normalize_newlines:
+        file_content = file_path.read_bytes()
+
+        normalized_content = (
+            file_content
+            .replace(b"\r\n", b"\n")
+            .replace(b"\r", b"\n")
+        )
+
+        return hashlib.sha256(
+            normalized_content
+        ).hexdigest()
 
     sha256_hash = hashlib.sha256()
 
@@ -130,7 +146,6 @@ def calculate_file_sha256(file_path):
             sha256_hash.update(file_block)
 
     return sha256_hash.hexdigest()
-
 
 def normalize_search_terms(text):
     """Convert text into normalized terms for keyword matching."""
@@ -250,7 +265,8 @@ class KnowledgeRetriever:
         """Confirm that chunks and embeddings match the metadata."""
 
         chunks_checksum = calculate_file_sha256(
-            self.chunks_file
+            self.chunks_file,
+            normalize_newlines=True,
         )
 
         if (

@@ -33,8 +33,24 @@ TEXT_COLUMN = "searchable_text"
 BATCH_SIZE = 32
 
 
-def calculate_file_sha256(file_path):
-    """Calculate a SHA-256 checksum for a file."""
+def calculate_file_sha256(
+    file_path,
+    normalize_newlines=False,
+):
+    """Calculate a cross-platform SHA-256 checksum."""
+
+    if normalize_newlines:
+        file_content = file_path.read_bytes()
+
+        normalized_content = (
+            file_content
+            .replace(b"\r\n", b"\n")
+            .replace(b"\r", b"\n")
+        )
+
+        return hashlib.sha256(
+            normalized_content
+        ).hexdigest()
 
     sha256_hash = hashlib.sha256()
 
@@ -233,7 +249,10 @@ def save_embedding_metadata(
             CHUNKS_FILE.relative_to(PROJECT_ROOT)
         ),
         "knowledge_chunks_sha256": (
-            calculate_file_sha256(CHUNKS_FILE)
+            calculate_file_sha256(
+            CHUNKS_FILE,
+            normalize_newlines=True,
+        )
         ),
         "embeddings_file": str(
             EMBEDDINGS_FILE.relative_to(PROJECT_ROOT)
