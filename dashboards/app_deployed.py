@@ -6,6 +6,8 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
+from dashboards.rag_copilot import build_rag_copilot
+
 
 st.set_page_config(
     page_title="Banking Customer Intelligence",
@@ -1593,6 +1595,7 @@ def main():
         recommendation_tab,
         customer_tab,
         model_tab,
+        copilot_tab,
     ) = st.tabs(
         [
             "Overview",
@@ -1600,6 +1603,7 @@ def main():
             "Recommendations",
             "Customer 360",
             "Model Insights",
+            "AI Copilot",
         ]
     )
 
@@ -1617,6 +1621,9 @@ def main():
 
     with model_tab:
         build_model_insights(filtered_customers)
+
+    with copilot_tab:
+        build_rag_copilot()
 
 
 if __name__ == "__main__":
