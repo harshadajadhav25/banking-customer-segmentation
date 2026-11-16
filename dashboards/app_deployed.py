@@ -1,6 +1,12 @@
 """Deployment-ready banking customer intelligence dashboard."""
 
+import sys
 from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import altair as alt
 import pandas as pd
@@ -25,7 +31,7 @@ SEGMENT_COLORS = {
     "Low-Engagement Dormant": "#EB5757",
 }
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
 DATA_DIRECTORY = PROJECT_ROOT / "data" / "dashboard"
 CUSTOMER_DATA_FILE = DATA_DIRECTORY / "customer_segments.csv"
 RECOMMENDATION_DATA_FILE = (
