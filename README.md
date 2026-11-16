@@ -1,141 +1,246 @@
 # Banking Customer Segmentation and Product Recommendation Platform
 
-[![Python Tests](https://github.com/harshadajadhav25/banking-customer-segmentation/actions/workflows/python-tests.yml/badge.svg)](https://github.com/harshadajadhav25/banking-customer-segmentation/actions/workflows/python-tests.yml)
+An end-to-end data, machine learning, and generative AI project that transforms anonymized historical banking data into a tested Customer 360 dataset, behavioral customer segments, explainable product recommendations, interactive dashboards, and a grounded RAG Copilot.
 
-An end-to-end banking analytics platform that transforms anonymized relational banking data into validated data marts, behavioral customer segments, ranked product recommendations, and an interactive Streamlit dashboard.
+## Live Application
 
-## Live Dashboard
+[Open the Banking Customer Intelligence Dashboard](https://banking-customer-segmentation-intelligence.streamlit.app/)
 
-Explore the deployed Banking Customer Intelligence dashboard:
+The deployed Streamlit application includes:
 
-[Open the Streamlit Dashboard](https://banking-customer-segmentation-intelligence.streamlit.app)
+- Portfolio overview
+- Customer segment intelligence
+- Product recommendation analytics
+- Customer 360 exploration
+- Model insights
+- Grounded AI Copilot
 
-The public dashboard uses a validated, anonymized CSV snapshot generated from the analytics marts. The local dashboard connects directly to PostgreSQL.
+## Project Results
 
-## Project results
+| Metric | Result |
+|---|---:|
+| Transaction records processed | 1,056,320 |
+| Customers analyzed | 4,500 |
+| Customer segments | 5 |
+| Product recommendations | 12,175 |
+| Recommendation product types | 6 |
+| Customers receiving recommendations | 4,500 |
+| Knowledge-base documents | 6 |
+| RAG document chunks | 215 |
+| Embedding dimensions | 384 |
+| dbt tests passing | 167 |
+| Python tests passing | 7 |
 
-- Processed **1,056,320 banking transactions**
-- Built Customer 360 records for **4,500 primary account owners**
-- Created **five behavioral customer segments**
-- Generated **12,175 ranked recommendations**
-- Provided recommendations for all **4,500 modeled customers**
-- Created PostgreSQL schemas for raw, staging, analytics, and ML data
-- Completed **167 dbt models and data tests with zero errors**
-- Automated the complete pipeline through one Python command
+## Business Questions
 
-## Business questions
+This project addresses the following questions:
 
 - What distinct customer behavior segments exist?
-- Which segments demonstrate higher value and engagement?
-- Which customers show declining activity or financial volatility?
-- Which products or services are relevant for each customer?
-- How can marketing teams prioritize campaigns using transparent rules?
-- How can recommendation results remain explainable and auditable?
+- Which segments demonstrate the highest value and engagement?
+- Which customers show declining activity or low engagement?
+- Which products may be relevant to each customer?
+- Why was a specific product recommendation generated?
+- What verified data and rules support each recommendation?
+- How can generative AI explain analytics without making prohibited banking decisions?
 
 ## Architecture
 
 ```mermaid
 flowchart TD
     A["PKDD banking files"] --> B["Python ingestion"]
-    B --> C[("PostgreSQL raw")]
-    C --> D["dbt staging models"]
-    D --> E["Customer 360 and feature marts"]
+    B --> C[("PostgreSQL raw schema")]
+    C --> D["dbt staging and intermediate models"]
+    D --> E["Customer 360 and analytics marts"]
     E --> F["K-Means segmentation"]
-    F --> G[("PostgreSQL ML outputs")]
-    G --> H["dbt analytics marts"]
-    H --> I["Rule-based recommendations"]
-    I --> J[("Recommendation mart")]
-    J --> K["Streamlit dashboard"]
+    F --> G["Rule-based recommendations"]
+    G --> H["Dashboard CSV export"]
+    H --> I["Streamlit dashboard"]
+
+    J["Project documentation"] --> K["Markdown chunking"]
+    K --> L["Sentence-transformer embeddings"]
+    L --> M["Hybrid retrieval"]
+    E --> N["Controlled analytics tools"]
+    M --> O["Verified context builder"]
+    N --> O
+    O --> P["Safety controls"]
+    P --> Q["Groq LLM"]
+    Q --> I
 ```
 
-## Technology stack
+## Technology Stack
 
-- Python 3.11
-- Pandas and NumPy
-- scikit-learn
-- PostgreSQL 16
+### Data Engineering
+
+- Python
+- Pandas
+- PostgreSQL
 - SQLAlchemy
-- dbt-core and dbt-postgres
+- psycopg2
 - Docker Compose
+
+### Analytics Engineering
+
+- dbt-core
+- dbt-postgres
+- Staging, intermediate, and mart models
+- Source tests and business-rule validation
+- Customer 360 feature engineering
+
+### Machine Learning
+
+- scikit-learn
+- K-Means clustering
+- Yeo-Johnson power transformation
+- Outlier capping
+- Silhouette score
+- Davies-Bouldin score
+- Cluster profiling and interpretation
+
+### RAG and Generative AI
+
+- Sentence Transformers
+- `sentence-transformers/all-MiniLM-L6-v2`
+- Hybrid semantic and lexical retrieval
+- Controlled customer analytics tools
+- Deterministic question routing
+- Deterministic safety policies
+- Groq API
+- `openai/gpt-oss-20b`
+
+### Visualization and Deployment
+
 - Streamlit
-- Altair and Plotly
+- Altair
+- Streamlit Community Cloud
+- GitHub
+
+### Testing
+
+- dbt data tests
 - pytest
-- Joblib
-- GitHub Actions
+- Source-manifest validation
+- RAG safety tests
+- Question-routing tests
 
 ## Dataset
 
-The project uses the anonymized PKDD'99 Financial dataset. Its relational structure contains:
+The project uses the anonymized PKDD'99 Financial dataset.
 
-| Table | Records |
-|---|---:|
-| Transactions | 1,056,320 |
-| Orders | 6,471 |
-| Clients | 5,369 |
-| Dispositions | 5,369 |
-| Accounts | 4,500 |
-| Cards | 892 |
-| Loans | 682 |
-| Districts | 77 |
+Its relational structure includes:
 
-The source data covers historical banking activity from 1993 through 1998. It is used only for portfolio demonstration and is not presented as current banking activity.
+- Accounts
+- Clients
+- Account dispositions
+- Transactions
+- Loans
+- Payment cards
+- Standing payment orders
+- District demographics
 
-The analytics model contains 4,500 customers because it uses one primary account owner per account. Source customer IDs are not sequential, and secondary account users are excluded to prevent duplicated account behavior.
+The dataset is historical. Dates, balances, transaction activity, and monetary values must not be presented as current banking activity.
 
-## Data pipeline
+## Data Pipeline
 
-### 1. Raw ingestion
+The data pipeline performs the following operations:
 
-Python loads the eight source files into PostgreSQL’s `raw` schema. Row-count reconciliation verifies that every source record is loaded.
+1. Validates the local environment and source files.
+2. Loads the source data into PostgreSQL.
+3. Applies staging transformations with dbt.
+4. Builds intermediate account and transaction features.
+5. Creates the Customer 360 analytical mart.
+6. Produces customer-level segmentation features.
+7. Trains and evaluates K-Means models.
+8. Assigns business-friendly segment names.
+9. Generates transparent rule-based recommendations.
+10. Validates recommendation quality.
+11. Exports dashboard-ready CSV snapshots.
+12. Builds the RAG knowledge base and embeddings.
+13. Serves analytics and AI explanations through Streamlit.
 
-### 2. dbt transformations
+## Customer 360
 
-dbt performs:
+The Customer 360 mart combines customer, account, transaction, balance, product, loan, payment-order, and district information.
 
-- Type conversion and data cleaning
-- Source validation
-- Relational joins
-- Transaction aggregation
-- Account-level feature engineering
-- Customer 360 modeling
-- ML feature preparation
-- Analytics mart creation
+Example features include:
 
-The database uses these schemas:
-
-| Schema | Purpose |
-|---|---|
-| `raw` | Original source data |
-| `staging` | Cleaned and standardized records |
-| `analytics` | Customer 360 and reporting marts |
-| `ml` | Segments, profiles, and recommendations |
-
-### 3. Customer segmentation
-
-The segmentation pipeline uses 14 behavioral features, including:
-
+- Customer age at snapshot
 - Account tenure
-- Transaction frequency and volume
+- Days since the last transaction
+- Transaction count
+- Active month count
+- Total transaction volume
 - Average transaction amount
 - Net cash flow
-- Average and latest balances
-- Negative-balance activity
+- Average and latest balance
+- Negative-balance percentage
 - Card withdrawals
 - Cash deposits
 - Incoming and outgoing transfers
+- Card ownership
+- Loan ownership
+- Payment-order count
+- Banking-product count
 
-Preprocessing includes:
+## Segmentation Model
 
+The segmentation pipeline uses the following behavioral features:
+
+- `customer_age_at_snapshot`
+- `account_tenure_months`
+- `days_since_last_transaction`
+- `average_monthly_transaction_count`
+- `average_monthly_transaction_volume`
+- `average_transaction_amount`
+- `net_cash_flow`
+- `average_balance`
+- `latest_balance`
+- `negative_balance_percentage`
+- `card_withdrawal_count`
+- `cash_deposit_count`
+- `incoming_transfer_count`
+- `outgoing_transfer_count`
+
+Product-ownership fields are intentionally excluded from clustering so that they can be used later when interpreting segments and generating recommendations.
+
+### Preprocessing
+
+The model pipeline applies:
+
+- Missing-value validation
 - First and 99th percentile outlier capping
-- Yeo-Johnson transformation
+- Yeo-Johnson power transformation
 - Standardization
-- Reproducible K-Means training with `random_state=42`
+- K-Means clustering with `random_state=42`
+- Twenty centroid initializations
 
-Cluster counts from `k=2` through `k=8` are evaluated using inertia, silhouette score, and Davies-Bouldin score. Five clusters were selected after considering quantitative quality, segment size, and business interpretability.
+### Model Selection
 
-## Customer segments
+Models with 2 through 8 clusters were evaluated.
 
-| Segment | Customers | Percentage |
+| Clusters | Inertia | Silhouette Score | Davies-Bouldin Score |
+|---:|---:|---:|---:|
+| 2 | 45,918.68 | 0.2665 | 1.4649 |
+| 3 | 40,234.79 | 0.2290 | 1.8095 |
+| 4 | 35,121.94 | 0.2271 | 1.5786 |
+| 5 | 31,240.28 | 0.2438 | 1.4554 |
+| 6 | 28,436.12 | 0.2451 | 1.5098 |
+| 7 | 26,361.99 | 0.2381 | 1.4293 |
+| 8 | 24,886.08 | 0.2445 | 1.4099 |
+
+Five clusters were selected as a practical balance among:
+
+- Cluster compactness
+- Separation
+- Segment size
+- Interpretability
+- Behavioral differentiation
+- Recommendation usefulness
+
+The final choice was not based on a single metric.
+
+## Customer Segments
+
+| Segment | Customers | Portfolio Share |
 |---|---:|---:|
 | High-Value Multi-Product | 1,464 | 32.53% |
 | Everyday Cash-Focused | 1,409 | 31.31% |
@@ -143,222 +248,509 @@ Cluster counts from `k=2` through `k=8` are evaluated using inertia, silhouette 
 | High-Flow Financially Volatile | 260 | 5.78% |
 | Low-Engagement Dormant | 179 | 3.98% |
 
-The trained model, fitted transformer, feature order, clipping limits, segment names, and descriptions are saved together as a reusable Joblib artifact.
+Segment names are business-friendly interpretations of cluster-level patterns. They are not predictions or definitive statements about every customer assigned to a cluster.
 
-## Product recommendations
+## Product Recommendations
 
-The recommendation engine uses transparent rules based on:
+The project uses transparent business rules instead of a black-box recommendation model.
 
-- Customer segment
-- Existing card and loan ownership
-- Transaction activity
-- Account balances
-- Net cash flow
-- Negative-balance activity
-- Scheduled payment usage
-- Days since the last transaction
+Each recommendation contains:
 
-It generates up to three ranked recommendations per customer.
+- Customer identifier
+- Recommended product
+- Rule-based priority score
+- Recommendation rank
+- Human-readable reason
+- Rule version
 
-Supported recommendation types include:
+A maximum of three recommendations is retained per customer.
 
-- Payment Card
-- Personal Loan Consultation
-- Savings Account
-- Overdraft Protection
-- Automatic Payment Setup
-- Account Re-Engagement Review
+### Recommendation Results
 
-A personal loan consultation is only an invitation for human review. It is not an automated credit approval or eligibility decision.
+| Product | Recommendations |
+|---|---:|
+| Savings Account | 4,452 |
+| Payment Card | 3,607 |
+| Personal Loan Consultation | 3,566 |
+| Overdraft Protection | 287 |
+| Automatic Payment Setup | 188 |
+| Account Re-Engagement Review | 75 |
 
-## Recommendation results
+### Recommendation Validation
 
-- **12,175** recommendations generated
-- **4,500** customers covered
-- **Zero** duplicate customer-product combinations
-- **Zero** missing explanations
-- Scores validated between 0 and 100
-- Ranks validated between 1 and 3
+The generated output contains:
 
-## Streamlit dashboard
+- 12,175 recommendation rows
+- 4,500 customers with recommendations
+- Zero customers without recommendations
+- Zero duplicate customer-product pairs
+- Zero invalid scores
+- Zero invalid ranks
+- Zero missing recommendation details
+- No customer with more than three recommendations
 
-The dashboard provides:
+Recommendation scores are priority scores created by documented rules. They are not approval, eligibility, acceptance, or purchase probabilities.
 
-- Total customer and recommendation metrics
-- Customer distribution by segment
-- Recommendation distribution by product
-- Segment balance and product summaries
-- Searchable customer-level recommendation explorer
-- Recommendation scores, ranks, and explanations
+## Grounded RAG Copilot
 
-Run the dashboard with:
+The Streamlit dashboard includes a grounded AI Copilot that explains project analytics using verified evidence.
 
-```powershell
-python -m streamlit run dashboards\app.py
-```
+The Copilot can answer questions such as:
 
-Then open:
+- Why were five customer segments selected?
+- What characteristics define a segment?
+- Why did a customer receive a particular recommendation?
+- What documented conditions trigger a recommendation?
+- What historical values appear in a customer's Customer 360 record?
+- What are the limitations of the segmentation model?
 
-```text
-http://localhost:8501
-```
+### Knowledge Base
 
-## Windows quick start
+The RAG knowledge base contains:
 
-### 1. Clone the repository and enter the project
+- `data_dictionary.md`
+- `model_card.md`
+- `pipeline_architecture.md`
+- `recommendation_rules.md`
+- `responsible_use.md`
+- `segment_profiles.md`
 
-```powershell
-git clone <repository-url>
-cd banking-customer-segmentation
-```
+These documents are converted into 215 searchable chunks.
 
-### 2. Create the environment file
+### Retrieval
 
-```powershell
-Copy-Item .env.example .env
-Copy-Item dbt\profiles.yml.example dbt\profiles.yml
-```
+The retrieval pipeline uses:
 
-Add the required PostgreSQL values to `.env`.
+- Normalized 384-dimensional embeddings
+- `sentence-transformers/all-MiniLM-L6-v2`
+- Cosine similarity
+- Keyword and section-title matching
+- A hybrid score containing:
+  - 70% semantic relevance
+  - 30% lexical relevance
 
-### 3. Start PostgreSQL
+### Controlled Analytics Tools
 
-```powershell
-docker compose up -d postgres
-```
+Customer-specific questions do not rely only on document retrieval.
 
-The project maps PostgreSQL to host port `5433`.
+The question router can call approved tools for:
 
-### 4. Create and activate the Python environment
+- Customer profiles
+- Customer recommendations
+- Segment summaries
+- Segment comparisons
+- Portfolio summaries
+- Model-evaluation results
 
-```powershell
-py -3.11 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
+The tools load verified dashboard data and return structured evidence to the context builder.
 
-### 5. Install dependencies
+The LLM cannot generate arbitrary SQL or directly access the database.
 
-```powershell
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
+### Safety Controls
 
-### 6. Verify the environment
+Questions are evaluated before retrieval or LLM generation.
 
-```powershell
-python -m src.extraction.check_environment
-python -m pip check
-```
+The assistant blocks requests involving:
 
-### 7. Run the complete analytics pipeline
+- Loan approval or rejection
+- Creditworthiness decisions
+- Product eligibility
+- Pricing decisions
+- Adverse banking actions
+- Fraud accusations
+- Protected-attribute decisions
+- Identity or privacy violations
+- Destructive SQL
+- Personalized financial advice
+- Credential or system-prompt extraction
 
-```powershell
-python run_pipeline.py
-```
+For blocked questions, the system returns a deterministic response without calling the LLM.
 
-The pipeline performs these steps in dependency order:
+### Example
 
-1. Builds the segmentation feature mart
-2. Trains and validates the segmentation model
-3. Writes segment assignments and profiles to PostgreSQL
-4. Builds the customer-segment mart
-5. Generates and validates product recommendations
-6. Writes recommendation outputs to PostgreSQL
-7. Builds and tests the complete dbt project
-
-Successful execution ends with:
+Question:
 
 ```text
-PIPELINE COMPLETED SUCCESSFULLY
+Why was Customer 25 recommended Overdraft Protection?
 ```
 
-### 8. Start the dashboard
-
-```powershell
-python -m streamlit run dashboards\app.py
-```
-
-## Validation commands
-
-Run Python tests:
-
-```powershell
-python -m pytest -q
-```
-
-Run the complete dbt project:
-
-```powershell
-cd dbt
-dbt build --profiles-dir .
-```
-
-Current dbt result:
+Verified evidence:
 
 ```text
-PASS=167 WARN=0 ERROR=0 SKIP=0 TOTAL=167
+negative_balance_percentage = 3.63
 ```
 
-## Important outputs
+Documented rule:
 
-| Output | Location |
-|---|---|
-| Cluster evaluation | `data/processed/segmentation/cluster_evaluation.csv` |
-| Cluster profiles | `data/processed/segmentation/cluster_profiles.csv` |
-| Customer assignments | `data/processed/segmentation/customer_cluster_assignments.csv` |
-| Recommendation output | `data/processed/recommendations/customer_product_recommendations.csv` |
-| Reusable model artifact | `models/segmentation/customer_segmentation_pipeline.joblib` |
-| Customer segments table | `ml.customer_segments` |
-| Cluster profiles table | `ml.cluster_profiles` |
-| Product recommendations table | `ml.product_recommendations` |
-| Customer segment mart | `analytics.mart_customer_segments` |
-| Recommendation mart | `analytics.mart_product_recommendations` |
+```text
+negative_balance_percentage > 0
+```
 
-## Project structure
+The Copilot explains that historical negative-balance activity triggered the recommendation and cites both the verified analytics result and the documented rule.
+
+It does not interpret this activity as proof of financial distress, fraud, credit risk, or product eligibility.
+
+## Repository Structure
 
 ```text
 banking-customer-segmentation/
+├── .streamlit/
+│   └── config.toml
+├── config/
+│   └── source_tables.yml
 ├── dashboards/
-│   └── app.py
+│   ├── app.py
+│   ├── app_v2.py
+│   ├── app_deployed.py
+│   ├── rag_copilot.py
+│   ├── export_dashboard_data.py
+│   └── requirements.txt
 ├── data/
-│   └── processed/
+│   ├── dashboard/
+│   ├── processed/
+│   ├── rag/
+│   │   ├── embedding_metadata.json
+│   │   ├── knowledge_chunks.csv
+│   │   └── knowledge_embeddings.npy
+│   └── raw/
 ├── dbt/
+│   ├── macros/
 │   ├── models/
+│   │   ├── staging/
+│   │   ├── intermediate/
+│   │   └── marts/
 │   ├── dbt_project.yml
-│   └── profiles.yml
-├── models/
-│   └── segmentation/
+│   └── profiles.yml.example
+├── docs/
+│   ├── knowledge_base/
+│   ├── PROJECT_PLAN.md
+│   └── TROUBLESHOOTING.md
+├── sql/
+│   └── init/
 ├── src/
 │   ├── extraction/
 │   ├── profiling/
 │   ├── recommendations/
 │   ├── segmentation/
-│   ├── transformation/
-│   └── validation/
+│   └── rag/
+│       ├── analytics_tools.py
+│       ├── answer_generator.py
+│       ├── build_knowledge_base.py
+│       ├── context_builder.py
+│       ├── generate_embeddings.py
+│       ├── llm_client.py
+│       ├── prompt_builder.py
+│       ├── question_router.py
+│       ├── retriever.py
+│       └── safety.py
 ├── tests/
+├── .env.example
+├── .gitignore
 ├── docker-compose.yml
 ├── requirements.txt
-├── run_pipeline.py
-└── README.md
+└── run_pipeline.py
 ```
 
-## Responsible interpretation
+## Local Setup
 
-Customer segments describe patterns found in this historical dataset. They are not facts about individuals and should not be used for adverse decisions.
+### Prerequisites
 
-The recommendation system:
+Install:
 
-- Does not use gender, age, or location to determine recommendations
-- Uses transparent and reviewable rules
-- Does not approve or deny credit
-- Provides human-readable recommendation reasons
-- Is intended for portfolio and analytics demonstration only
+- Python 3.11
+- Git
+- Docker Desktop
+- Docker Compose
 
-## Future enhancements
+### 1. Clone the repository
 
-- Add Apache Airflow orchestration
-- Build a Power BI executive dashboard
-- Add recommendation acceptance and conversion tracking
-- Add model-drift monitoring
-- Expand GitHub Actions with PostgreSQL and dbt integration tests
-- Deploy the Streamlit application
+```bash
+git clone https://github.com/harshadajadhav25/banking-customer-segmentation.git
+cd banking-customer-segmentation
+```
+
+### 2. Create a virtual environment
+
+Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+macOS or Linux:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure environment variables
+
+Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+macOS or Linux:
+
+```bash
+cp .env.example .env
+```
+
+Update `.env` with the local PostgreSQL configuration.
+
+Never commit `.env`.
+
+### 5. Start PostgreSQL
+
+```bash
+docker compose up -d postgres
+```
+
+### 6. Validate the environment
+
+```bash
+python -m src.extraction.check_environment
+```
+
+### 7. Configure dbt
+
+Windows PowerShell:
+
+```powershell
+Copy-Item dbt\profiles.yml.example dbt\profiles.yml
+```
+
+macOS or Linux:
+
+```bash
+cp dbt/profiles.yml.example dbt/profiles.yml
+```
+
+Update the copied profile if necessary.
+
+### 8. Run the pipeline
+
+```bash
+python run_pipeline.py
+```
+
+The pipeline loads the source data, runs dbt models and tests, trains the segmentation model, generates recommendations, and validates the results.
+
+## Running Individual Components
+
+### Load raw source data
+
+```bash
+python -m src.extraction.load_raw_data
+```
+
+### Profile source tables
+
+```bash
+python -m src.profiling.profile_sources
+```
+
+### Run dbt
+
+```bash
+cd dbt
+dbt build --profiles-dir .
+cd ..
+```
+
+### Train the segmentation model
+
+```bash
+python -m src.segmentation.train_segmentation
+```
+
+### Generate product recommendations
+
+```bash
+python -m src.recommendations.generate_recommendations
+```
+
+### Export deployment data
+
+```bash
+python dashboards/export_dashboard_data.py
+```
+
+### Run the local dashboard
+
+```bash
+python -m streamlit run dashboards/app_deployed.py
+```
+
+## RAG Setup
+
+### 1. Create local Streamlit secrets
+
+Create:
+
+```text
+.streamlit/secrets.toml
+```
+
+Add:
+
+```toml
+GROQ_API_KEY = "your-groq-api-key"
+GROQ_MODEL = "openai/gpt-oss-20b"
+```
+
+The secrets file is excluded by `.gitignore`.
+
+Never commit or publish the API key.
+
+### 2. Build the knowledge base
+
+```bash
+python -m src.rag.build_knowledge_base
+```
+
+### 3. Generate embeddings
+
+```bash
+python -m src.rag.generate_embeddings
+```
+
+### 4. Test retrieval
+
+```bash
+python -m src.rag.retriever "Why were five customer segments selected?"
+```
+
+### 5. Test the complete assistant
+
+```bash
+python -m src.rag.answer_generator "Why was Customer 25 recommended Overdraft Protection?"
+```
+
+### 6. Test a prohibited question
+
+```bash
+python -m src.rag.answer_generator "Should Customer 25 be approved for a loan?"
+```
+
+The request should be blocked without calling the LLM.
+
+## Testing
+
+Run all Python tests:
+
+```bash
+python -m pytest -v
+```
+
+Run the dbt test suite:
+
+```bash
+cd dbt
+dbt test --profiles-dir .
+```
+
+The current project test results are:
+
+```text
+Python: 7 passed
+dbt: 167 passed
+```
+
+## Streamlit Deployment
+
+The public application uses CSV snapshots and does not require the local PostgreSQL container.
+
+Deployment entry point:
+
+```text
+dashboards/app_deployed.py
+```
+
+Deployment requirements:
+
+```text
+dashboards/requirements.txt
+```
+
+Configure these secrets in Streamlit Community Cloud:
+
+```toml
+GROQ_API_KEY = "your-groq-api-key"
+GROQ_MODEL = "openai/gpt-oss-20b"
+```
+
+Do not upload `.streamlit/secrets.toml` to GitHub.
+
+## Responsible Use
+
+This project is intended for:
+
+- Portfolio demonstration
+- Educational use
+- Customer-behavior exploration
+- Analytics-engineering demonstrations
+- Explainable recommendation demonstrations
+- Responsible RAG application development
+
+It must not be used for:
+
+- Loan approval or rejection
+- Credit scoring
+- Product eligibility
+- Credit-limit decisions
+- Pricing decisions
+- Adverse actions
+- Fraud accusations
+- Default prediction
+- Automated decisions about individuals
+
+Customer segments summarize patterns in historical data. They are not facts about every individual customer.
+
+Product recommendations are transparent business-rule outputs. They do not represent approval, eligibility, financial advice, or guaranteed customer interest.
+
+## Key Engineering Highlights
+
+- Modeled relational banking data in PostgreSQL.
+- Built reusable staging, intermediate, and mart layers with dbt.
+- Created a tested Customer 360 analytical dataset.
+- Evaluated multiple K-Means clustering configurations.
+- Produced five interpretable customer segments.
+- Generated 12,175 explainable product recommendations.
+- Created a deployment-ready dashboard using CSV snapshots.
+- Built a hybrid RAG pipeline with semantic and lexical retrieval.
+- Added controlled analytics tools for verified customer questions.
+- Implemented deterministic safety controls before LLM execution.
+- Deployed the complete dashboard and RAG Copilot on Streamlit Cloud.
+
+## Future Improvements
+
+Potential future enhancements include:
+
+- Retrieval evaluation datasets and precision metrics
+- RAG answer-quality monitoring
+- Conversation-level context with strict privacy controls
+- Automated knowledge-base refresh workflows
+- Airflow orchestration
+- Additional model-monitoring dashboards
+- Segment-stability analysis over multiple snapshots
+- Human review workflows for recommendation rules
+- Power BI semantic modeling
+- Authentication and role-based dashboard access
+
+## Author
+
+**Harshada Jadhav**
+
+- GitHub: [harshadajadhav25](https://github.com/harshadajadhav25)
+- Project repository: [banking-customer-segmentation](https://github.com/harshadajadhav25/banking-customer-segmentation)
+- Live dashboard: [Banking Customer Intelligence](https://banking-customer-segmentation-intelligence.streamlit.app/)
